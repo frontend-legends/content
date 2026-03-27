@@ -11,7 +11,7 @@ order: 0
 > Ключевые концепции. Примеры кода. Вопросы с интервью. Ссылки для углубления.
 > Всё кратко, по существу и в темпе реальной подготовки.
 
-Контент полностью open source — нашли ошибку или хотите дополнить: [GitHub](https://github.com/mixdevtools/frontend-legends).
+Контент полностью open source — нашли ошибку или хотите дополнить: [GitHub](https://github.com/frontend-legends/content).
 
 ---
 
@@ -41,7 +41,7 @@ Frontend Legends подойдёт, если ты:
 
 ---
 
-## Карта {#map}
+## Обзор карты
 
 | #   | Раздел                                                              | Описание                                                  |
 | --- | ------------------------------------------------------------------- | --------------------------------------------------------- |
@@ -51,20 +51,20 @@ Frontend Legends подойдёт, если ты:
 | 04  | [Network & API](/content/network-api)                               | HTTP, CORS, REST, GraphQL, кэширование, auth, real-time   |
 | 05  | [HTML](/content/html)                                               | Семантика, формы, доступность, медиа, Web Components      |
 | 06  | [CSS](/content/css)                                                 | Каскад, layout, анимации, типографика, архитектура стилей |
-| 07  | JavaScript                                                          | Типы, замыкания, Event Loop, async, модули, паттерны      |
-| 08  | TypeScript                                                          | Типы, generics, utility types, TS + React/Vue             |
-| 09  | React                                                               | Хуки, state management, паттерны, performance             |
-| 10  | Vue                                                                 | Composition API, реактивность, Pinia, Nuxt                |
-| 11  | Advanced Tooling                                                    | Bundlers, linters, CI/CD, DevTools                        |
-| 12  | Ecosystem & Libs                                                    | Популярные библиотеки и инструменты                       |
-| 13  | Additional Topics                                                   | Дополнительные темы                                       |
-| 14  | Testing & Deploying                                                 | Тестирование и деплой                                     |
-| 15  | Modern Dev                                                          | Современная разработка                                    |
-| 16  | Architecture & System Design                                        | Архитектура и системный дизайн                            |
-| 17  | Security & Performance                                              | Безопасность и производительность                         |
-| 18  | Preparing for Interview                                             | Подготовка к собеседованию                                |
-| 19  | Common Coding Questions                                             | Частые задачи с собесов                                   |
-| 20  | Final Steps                                                         | Финальные шаги                                            |
+| 07  | [JavaScript](/content/javascript)                                   | Типы, замыкания, Event Loop, async, модули, паттерны      |
+| 08  | [TypeScript](/content/typescript)                                   | Типы, generics, utility types, TS + React/Vue             |
+| 09  | [React](/content/reactjs)                                           | Хуки, state management, паттерны, performance             |
+| 10  | [Vue](/content/vuejs)                                               | Composition API, реактивность, Pinia, Nuxt                |
+| 11  | [Advanced Tooling](/content/advanced-tooling)                       | Bundlers, linters, CI/CD, DevTools                        |
+| 12  | [Ecosystem & Libs](/content/ecosystem-libs)                         | Популярные библиотеки и инструменты                       |
+| 13  | [Additional Topics](/content/additional-topics)                     | Дополнительные темы                                       |
+| 14  | [Testing & Deploying](/content/testing-deploying)                   | Тестирование и деплой                                     |
+| 15  | [Modern Dev](/content/modern-dev)                                   | Современная разработка                                    |
+| 16  | [Architecture & System Design](/content/architecture)               | Архитектура и системный дизайн                            |
+| 17  | [Security & Performance](/content/security-perfomance)              | Безопасность и производительность                         |
+| 18  | [Preparing for Interview](/content/preparing-for-interviews)        | Подготовка к собеседованию                                |
+| 19  | [Common Coding Questions](/content/common-coding-questions)         | Частые задачи с собесов                                   |
+| 20  | [Final Steps](/content/final-steps)                                 | Финальные шаги                                            |
 
 ---
 
@@ -80,8 +80,11 @@ Frontend Legends подойдёт, если ты:
 
 Frontend Legends - open-source проект и комьюнити разработчиков, которые делятся опытом и помогают друг другу готовиться.
 
-- [GitHub Discussions - обсудить или задать вопрос](https://github.com/mixdevtools/frontend-legends/discussions)
-- Telegram
+<!-- - [aitishka вебсайт](https://aitishka.com) -->
+<!-- - [aitishka телеграм сообщество](https://t.me/aitishka) -->
+
+- [github discussions](https://github.com/orgs/frontend-legends/discussions)
+- [frontend legends телеграм](https://t.me/frontend-legends)
 
 ---
 
