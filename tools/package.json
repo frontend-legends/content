@@ -1,0 +1,22 @@
+{
+  "name": "frontend-legends-tools",
+  "private": true,
+  "description": "Проверки текста глав: структура, разметка, ссылки, карта тем",
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "lint": "node lint.mjs",
+    "topics": "node topics.mjs",
+    "links": "node links.mjs"
+  },
+  "devDependencies": {
+    "remark-gfm": "^4.0.1",
+    "remark-mdc": "^3.10.0",
+    "remark-parse": "^11.0.0",
+    "unified": "^11.0.5",
+    "unist-util-visit": "^5.2.0",
+    "yaml": "^2.9.1"
+  }
+}

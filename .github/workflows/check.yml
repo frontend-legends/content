@@ -1,0 +1,36 @@
+name: content check
+
+# Ветки и PR: структура глав, разметка, проверочный код. Деплой — отдельно (trigger-deploy.yml, только main).
+on:
+  pull_request:
+  push:
+    branches-ignore: [main]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: install
+        run: |
+          npm ci --prefix tools
+          npm ci --prefix codes
+          npx --prefix codes playwright-core install --with-deps chromium-headless-shell
+      - name: lint (главы с reviewed)
+        run: node tools/lint.mjs
+      - name: code (codes/)
+        run: npm test --prefix codes
+
+  links:
+    runs-on: ubuntu-latest
+    continue-on-error: true # внешние сайты падают и банят ботов — не блокируем PR, смотрим отчёт
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: npm ci --prefix tools
+      - run: node tools/links.mjs
