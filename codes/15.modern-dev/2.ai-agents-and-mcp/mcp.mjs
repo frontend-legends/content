@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 import { Client } from '@modelcontextprotocol/sdk/client/index.js';
 import { StdioClientTransport } from '@modelcontextprotocol/sdk/client/stdio.js';
 
-const serverPath = fileURLToPath(new URL('./server.mjs', import.meta.url));
+const serverPath = fileURLToPath(new URL('./_server.mjs', import.meta.url));
 
 // --- 1. руками: строка JSON на сообщение, initialize → ответ с версией протокола и возможностями ---
 {
