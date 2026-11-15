@@ -1,0 +1,11 @@
+{
+  "name": "fl-vue-types-fixture",
+  "private": true,
+  "description": "Изолированный проект для проверки типов Vue: vue-tsc требует программный API TypeScript, которого нет в TypeScript 7, поэтому здесь TypeScript 6.",
+  "devDependencies": {
+    "pinia": "4.1.0",
+    "typescript": "6.0.3",
+    "vue": "3.5.45",
+    "vue-tsc": "3.3.14"
+  }
+}
