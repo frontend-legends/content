@@ -25,7 +25,7 @@ const filters = args.filter((a) => !a.startsWith('--'));
 // ---------- правила стандарта ----------
 const COMPONENTS = {
   tldr: [],
-  question: ['mid', 'senior', 'followups'],
+  question: ['answer', 'more', 'followups'],
   practice: ['solution'],
   pitfall: ['symptom', 'cause', 'fix'],
 };
@@ -128,6 +128,9 @@ function lint(file) {
     if (n.type === 'componentContainerSection' && parent?.name in COMPONENTS) {
       if (!COMPONENTS[parent.name].includes(n.name)) err(`у ::${parent.name} нет слота #${n.name} (есть: ${COMPONENTS[parent.name].join(', ') || 'нет слотов'})`, n);
     }
+    if (n.type === 'text' && /\b(mid\+?|senior|junior)\b/i.test(n.value)) {
+      err(`деление по уровням в тексте («${n.value.match(/\b(mid\+?|senior|junior)\b/i)[0]}»): книга — справочник для всех уровней`, n);
+    }
     if (n.type === 'text') {
       if (/\p{Emoji_Presentation}|️/u.test(n.value)) err(`эмодзи в тексте: «${n.value.trim().slice(0, 40)}»`, n);
       if (/(^|[^\s-])\s-\s/.test(n.value) || /\s--\s/.test(n.value)) err(`дефис вместо тире « — »: «${n.value.trim().slice(0, 60)}»`, n);
@@ -197,11 +200,8 @@ function lint(file) {
   const qs = comps('question');
   if (!light && (qs.length < 5 || qs.length > 7)) err(`вопросов ::question ${qs.length}, нужно 5–7`);
   for (const q of qs) {
-    const level = q.attributes?.level;
-    if (!['mid', 'senior'].includes(level)) err(`::question level="${level ?? ''}" — только mid или senior`, q);
-    const s = slots(q);
-    if (!s.includes('mid')) err('::question без #mid', q);
-    if (level === 'senior' && !s.includes('senior')) warn('senior-вопрос без #senior', q);
+    if (q.attributes?.level) err('::question без level: книга не делит ответы по уровням', q);
+    if (!slots(q).includes('answer')) err('::question без #answer', q);
   }
   const qHeading = h2.find((n) => textOf(n).trim() === 'Как спрашивают на собеседовании');
   for (const q of qs) if (qHeading && root.indexOf(q) < root.indexOf(qHeading)) err('::question вне раздела «Как спрашивают на собеседовании»', q);
