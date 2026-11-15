@@ -26,6 +26,13 @@ const vue = await import('vue');
 const { parse, compileScript, compileTemplate } = await import('vue/compiler-sfc');
 
 export const warnings = [];
+// предупреждения без экземпляра приложения Vue пишет в console.warn — собираем и их
+const consoleWarn = console.warn;
+console.warn = (...args) => {
+  const msg = args.map(String).join(' ');
+  if (msg.startsWith('[Vue warn]')) warnings.push(msg.replace(/^\[Vue warn\]: /, ''));
+  else consoleWarn(...args);
+};
 const cacheDir = fileURLToPath(new URL('./.sfc-cache/', import.meta.url));
 mkdirSync(cacheDir, { recursive: true });
 
