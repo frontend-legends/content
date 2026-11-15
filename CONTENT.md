@@ -290,6 +290,28 @@ grep -rli "event loop" --include="*.md" .
 | уровни кеша, стратегии Service Worker, stale-while-revalidate, bfcache | 17.13 Caching strategies (заголовки — 4.08, кеш при выкладке — 13.12, Service Worker — 3.09) |
 | лабораторные и полевые данные, Lighthouse, RUM, профилирование | 17.14 Measuring and monitoring (инфраструктура мониторинга — 13.14) |
 
+### Дома понятий задач на кодинг (глава 19)
+
+Глава 19 — реализации, которые просят написать на фронтенд-раунде. Понятия, на которых они держатся, разобраны в главе 7: `this` и функции — 7.04–7.06, прототипы — 7.07, event loop — 7.08, промисы — 7.09. Здесь — как реализовать и какие краевые случаи проверяют. Формат раунда целиком — 18.05.
+
+| Понятие | Где разобрано подробно |
+| --- | --- |
+| что такое фронтенд-раунд, его форматы и отличие от алгоритмов | 19.01 Introduction (форматы интервью — 18.05) |
+| debounce, throttle, curry, memoize, compose, once — реализация | 19.02 Higher-order utils (применение в производительности — 17.11) |
+| deepClone, deepEqual, flatten, get/set по пути | 19.03 Deep operations (`structuredClone` — 7.03) |
+| полифилы `call`, `apply`, `bind`, `new`, `instanceof`, `Object.create` | 19.04 Function polyfills (`this` — 7.05, прототипы — 7.07) |
+| полифилы методов массива, `groupBy`, дедупликация | 19.05 Array polyfills |
+| комбинаторы промисов, promisify, retry, ограничение конкурентности, очередь | 19.06 Promises and async (промисы — 7.09) |
+| свой Promise по Promises/A+ | 19.07 Implement Promise (микрозадачи — 7.08) |
+| EventEmitter, pub/sub, observable, Redux-lite | 19.08 Events and pub/sub (архитектура состояния — 16.05) |
+| делегирование, обход DOM, свои селекторы, `classNames` | 19.09 DOM tasks (события DOM — 3.04) |
+| machine coding: табы, аккордеон, модалка, рейтинг, таймер, OTP | 19.10 UI components basics (ARIA — 5.06) |
+| автокомплит, бесконечная прокрутка, пагинация, todo, крестики-нолики — реализация | 19.11 UI components advanced (системный дизайн тех же задач — 16.10) |
+| signal/effect, `ref`/`reactive`, `useState` с нуля, мини-VDOM | 19.12 Framework implementation (сигналы — 15.04, реактивность Vue — 10.10, хуки — 9.04) |
+| LRU, rate limiter, мемоизированный селектор, мини-стор | 19.13 Caching and state |
+| задачи «что выведет»: порядок event loop, замыкания, `this`, hoisting, приведение типов | 19.14 Tricky and output (механизмы — глава 7) |
+| алгоритм решения задачи, уточняющие вопросы, частые ошибки, чеклист | 19.15 How to approach |
+
 Ссылку можно встроить в абзац («Подробно — в [Event Loop](/content/javascript/event-loop).») или вынести заметкой `> …`.
 
 Примеры «домов»: event loop — 7.08, редакции ES2015+ — 7.16, сборщик мусора и утечки — 7.15, внутренности V8 — 7.01, воркеры — 14.01.
