@@ -1,0 +1,12 @@
+{
+  "name": "fl-meta-frameworks-fixture",
+  "private": true,
+  "description": "Изолированные зависимости для проверок 12.07: Next.js и Astro тяжёлые и тянут свои версии React и Vite.",
+  "devDependencies": {
+    "astro": "7.4.12",
+    "@astrojs/react": "7.1.9",
+    "next": "16.4.6",
+    "react": "19.2.0",
+    "react-dom": "19.2.0"
+  }
+}
