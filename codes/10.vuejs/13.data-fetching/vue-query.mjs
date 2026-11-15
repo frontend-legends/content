@@ -59,13 +59,13 @@ const { data } = window.__useQuery({ queryKey: ['product', props.id], queryFn: (
   calls.length = 0;
   const show = ref(true);
   const states = [];
-  const Card = defineComponent({ setup() { const q = useQuery({ queryKey: ['product', 4], queryFn: () => api.product(4), staleTime: 40 }); return () => { states.push(`${q.data.value?.title ?? '-'}|${q.isFetching.value}`); return h('b', q.data.value?.title ?? '…'); }; } });
+  const Card = defineComponent({ setup() { const q = useQuery({ queryKey: ['product', 4], queryFn: () => api.product(4), staleTime: 400 }); return () => { states.push(`${q.data.value?.title ?? '-'}|${q.isFetching.value}`); return h('b', q.data.value?.title ?? '…'); }; } });
   const P = defineComponent({ setup: () => () => (show.value ? h(Card) : h('i')) });
   const { mounted } = setup(P);
   await mounted; await settle();
   show.value = false; await flush(); show.value = true; await settle();
   assert.deepEqual(calls, ['product 4']);   // данные свежие — повторного запроса нет
-  await wait(50);
+  await wait(450);
   show.value = false; await flush(); states.length = 0; show.value = true; await settle();
   assert.deepEqual(calls, ['product 4', 'product 4']);
   assert.equal(states[0], 'Товар 4|true');   // сразу кешированные данные, обновление идёт в фоне
