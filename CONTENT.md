@@ -250,6 +250,8 @@ codes/07.javascript/1.introduction/races.mjs
 | TypeScript: «это скомпилируется», «здесь ошибка типов» | `.ts` / `.tsx` | `tsc` в строгом режиме проверяет каждый файл; ожидаемая ошибка — строка с `// @ts-expect-error`. Только типы, без запуска — `// types-only` в заголовке |
 | React | `.tsx` / `.jsx` / `.cjs` | `react-dom/server` или `react-dom/client` + jsdom; `act` для эффектов |
 | Vue | `.mjs` | `vue` (с компилятором шаблонов), `vue/server-renderer`, jsdom |
+| Типы во Vue: `.vue`, шаблоны, макросы | `.mjs` + `.vue` | `vue-tsc` в изолированном проекте `_vue/` со своим `package.json` и TypeScript 6 (у TypeScript 7 нет API для `vue-tsc`); ожидаемая ошибка в шаблоне — `<!-- @vue-expect-error -->`. Пример — `codes/08.typescript/12.ts-with-vue/` |
+| Ошибка конфигурации, кода ошибки, флаги tsconfig | `.mjs` | временный проект + `tsc -p`, сверка кодов `TSxxxx`; чистое браузерное окружение без типов Node — `tsc --ignoreConfig --lib dom` |
 | DOM, события, CSS, раскладка | `.mjs` | `withPage` из `codes/_lib/browser.mjs`: настоящий Chromium, `getComputedStyle`, `getBoundingClientRect` |
 
 Утверждения, которые кодом не проверить (архитектура, история, «как принято»), проверяются по первоисточникам: спецификации, документации, исходникам.

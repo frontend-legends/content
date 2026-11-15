@@ -204,30 +204,30 @@
 
 ## 8. TypeScript
 
-- **8.01 Introduction** — `/content/typescript/introduction`
-  **Что такое TypeScript** · **Ключевые характеристики** · **Как работает TypeScript** · **Преимущества** · **Недостатки** · **Structural typing (Duck typing)** · **Type inference** · **Type annotations** · **Type assertion** · **Инструменты** · **Частые вопросы на собесе**
-- **8.02 Basic Types** — `/content/typescript/basic-types`
-  **Примитивные типы** · **null и undefined** · **symbol и bigint** · **Специальные типы** · any · unknown · never · void · Сравнительная таблица · **Literal types** · **Enum** · Gotchas с enum · Альтернатива enum - as const объект · **Объекты** · **Массивы** · **Tuples** · **as const** · **satisfies** · **Частые вопросы на собесе**
-- **8.03 Functions and Classes** — `/content/typescript/functions-and-classes`
-  **Типизация функций** · **Optional и default параметры** · **Rest параметры** · **Function overloads** · **Типизация callback-ов** · **void vs undefined** · **Параметр this** · **Function type expressions** · **Классы в TypeScript** · Property declarations · Constructor parameter shorthand · **Модификаторы видимости** · **readonly свойства** · **Абстрактные классы** · **implements** · **Static members** · **Decorators** · **Частые вопросы на собесе**
-- **8.04 Composing Types** — `/content/typescript/composing-types`
-  **Union Types - объединение** · **Intersection Types - пересечение** · **Type Aliases - псевдонимы типов** · **Interfaces - интерфейсы** · **Type vs Interface - сравнение** · **Index Signatures - индексные подписи** · **Операторы типов** · keyof - получение ключей · typeof в контексте типов · Indexed Access Types · **Module Augmentation - расширение сторонних типов** · **Частые вопросы на собесе**
-- **8.05 Type Narrowing** — `/content/typescript/type-narrowing`
-  **typeof guards** · **instanceof guards** · **Оператор in** · **Truthiness narrowing** · **Equality narrowing** · **Discriminated Unions - размеченные объединения** · Практический пример - ответ API · **Custom Type Guards - пользовательские защитники типов** · **Assertion Functions - функции-утверждения** · **Exhaustive Checking с never** · **Частые вопросы на собесе**
-- **8.06 Generics** — `/content/typescript/generics`
-  **Зачем нужны дженерики** · **Базовый синтаксис** · **Стрелочные функции и TSX** · **Generic Interfaces** · **Generic Type Aliases** · **Generic Classes** · **Constraints - ограничения** · **keyof Constraint** · **Default Type Parameters** · **Multiple Type Parameters** · **Const Type Parameters (TS 5.0+)** · **Практические паттерны** · Generic API Response · Generic Event Handler · Generic Factory · **Частые вопросы на собесе**
-- **8.07 Utility Types** — `/content/typescript/utility-types`
-  **Трансформация объектов** · Partial - все свойства становятся optional · Required - все свойства становятся обязательными · Readonly - все свойства только для чтения · **Выбор и исключение свойств** · Pick - выбрать конкретные свойства · Omit - исключить свойства · **Record - объект с типизированными ключами и значениями** · **Манипуляции с union-типами** · Exclude - исключить типы из union · Extract - извлечь типы из union · NonNullable - убрать null и undefined · **Утилиты для функций** · Parameters - типы параметров функции · ReturnType - тип возвращаемого значения · ConstructorParameters - параметры конструктора · InstanceType - тип экземпляра класса · **Работа с Promise** · Awaited - unwrap типа Promise · **Строковые утилиты** · **Практические примеры** · Типизированная функция обновления через API · Конфиг через Record · Состояние формы с Pick и Omit · **Таблица всех utility types** · **Частые вопросы на собесе**
-- **8.08 Advanced Types** — `/content/typescript/advanced-types`
-  **Mapped types** · Базовый синтаксис · Все свойства optional - так работает Partial · Модификаторы: readonly, ?, +/- · Key remapping - переименование ключей · **Conditional types** · Базовый синтаксис · Практический пример · **Ключевое слово infer** · Извлечение типа элемента массива · Так работает ReturnType · Вложенный infer - извлечение типа из Promise · Извлечение аргументов из события · **Distributive conditional types** · Как работает распределение · Как предотвратить распределение · **Template literal types** · Базовый синтаксис · Типизированные CSS-свойства · Типизированные роуты · **Рекурсивные типы** · DeepPartial - рекурсивный Partial · Рекурсивный тип JSON · DeepReadonly · **Branded types (номинальная типизация)** · Типобезопасные ID · **Сводная таблица продвинутых техник** · **Частые вопросы на собесе**
-- **8.09 Project Setup** — `/content/typescript/project-setup`
-  **Структура tsconfig.json** · **Ключевые опции компилятора** · target - целевая версия JavaScript · module - система модулей · lib - доступные API · moduleResolution - как искать модули · esModuleInterop · jsx · Пути: outDir, rootDir, baseUrl, paths · **Strict mode** · Что включает strict: true · strictNullChecks - самый важный флаг · noImplicitAny · strictPropertyInitialization · **Declaration files (.d.ts)** · Что это такое · Написание .d.ts для JS-библиотеки · declare keyword · **DefinitelyTyped и @types** · **ESM vs CJS в TypeScript** · Node.js с ESM · **Инструменты сборки** · tsc - компилятор TypeScript · Быстрые альтернативы · **Project references** · **Частые вопросы на собесе**
-- **8.10 Async and DOM** — `/content/typescript/async-and-dom`
-  **Типизация Promise** · **Awaited - разворачиваем вложенные промисы** · **Generic fetch wrapper** · **Typed API client** · **Иерархия DOM-типов** · Основные DOM-типы · **document.querySelector и типизация** · **Типизация событий** · addEventListener · **AbortController** · **Типизация ответов axios** · **Частые вопросы на собесе**
-- **8.11 TS with React** — `/content/typescript/ts-with-react`
-  **Типизация компонентов** · **Props interface** · Типы для children · **useState** · **useRef** · **useReducer** · **useContext** · **Event handlers** · **Generic-компоненты** · **forwardRef** · **Polymorphic "as" prop** · **Частые ошибки** · **Частые вопросы на собесе**
-- **8.12 TS with Vue** — `/content/typescript/ts-with-vue`
-  **Setup: script setup lang="ts"** · **defineProps** · **defineEmits** · **defineModel (Vue 3.4+)** · **ref() и типизация** · **reactive() и computed()** · **Composables** · **Template refs** · **provide / inject** · **Pinia store** · **Component instance type** · **Частые вопросы на собесе**
+- **8.01 Introduction** — `/content/typescript/introduction` · по стандарту
+  **Что такое TypeScript** · Типы стираются · **Структурная типизация** · Проверка лишних свойств · **Вывод и аннотации** · as — подсказка, а не преобразование · **Где TypeScript не защищает** · **Компилятор и инструменты** · **Как менялся TypeScript**
+- **8.02 Basic types** — `/content/typescript/basic-types` · по стандарту
+  **Примитивы и пустые значения** · **any, unknown, never, void** · any и unknown · never · void · {} и object · **Литеральные типы и расширение** · as const · **enum** · **Массивы, кортежи и объекты** · Массивы и кортежи · Объекты · **satisfies**
+- **8.03 Functions and classes** — `/content/typescript/functions-and-classes` · по стандарту
+  **Типы функций** · **Перегрузки** · **void и колбэки** · Бивариантность методов · Параметр this · **Классы** · private против # · Параметры-свойства · readonly, abstract, override · implements · **Декораторы**
+- **8.04 Composing types** — `/content/typescript/composing-types` · по стандарту
+  **Объединения и пересечения** · Объединение · Пересечение · **type и interface** · Слияние объявлений · extends против & · Неявная индексная сигнатура · Что выбрать · **Индексные сигнатуры** · **Типы из типов и значений** · **Расширение чужих типов**
+- **8.05 Type Narrowing** — `/content/typescript/type-narrowing` · по стандарту
+  **Как работает сужение** · **Встроенные защитники** · typeof · Истинность · Равенство · instanceof и Array.isArray · in · **Размеченные объединения** · Проверка полноты · **Предикаты и утверждения** · Предикат `x is T` · Выведенные предикаты · Утверждение `asserts x is T` · **Где сужение теряется и где устаревает** · Сохранённое условие · Замыкания · Свойства после вызова функции · catch
+- **8.06 Generics** — `/content/typescript/generics` · по стандарту
+  **Зачем нужны дженерики** · **Вывод параметров** · Частичного вывода нет · Значения по умолчанию · Запятая в .tsx · **Ограничения** · keyof в ограничении · T выбирает вызывающий · **Управление выводом** · const-параметры · NoInfer · **Вариантность**
+- **8.07 Utility types** — `/content/typescript/utility-types` · по стандарту
+  **Зачем утилиты** · **Модификаторы свойств** · Partial · Required · Readonly · **Выбор свойств** · Pick и Omit · Omit и объединения · Record · **Фильтрация объединений** · **Типы из функций и классов** · Перегрузки · Awaited · Классы · Строки и прочее
+- **8.08 Advanced types** — `/content/typescript/advanced-types` · по стандарту
+  **Зачем программировать на типах** · **Mapped-типы** · Модификаторы · Переименование и фильтрация ключей · **Условные типы и infer** · **Распределение по объединению** · Ловушки распределения · **Шаблонные литеральные типы** · **Рекурсивные типы** · Предел глубины · **Брендированные типы**
+- **8.09 Project setup** — `/content/typescript/project-setup` · по стандарту
+  **Что настраивает tsconfig** · **strict** · **Строже, чем strict** · noUncheckedIndexedAccess · exactOptionalPropertyTypes · Остальные · **target и lib** · types · **Модули** · Код собирает сборщик · Код запускает Node.js · paths · **Файлы объявлений** · declare module · skipLibCheck · **Эволюция**
+- **8.10 Async and DOM** — `/content/typescript/async-and-dom` · по стандарту
+  **Типы промисов** · new Promise · Комбинаторы · Ошибки · Забытый await · **Граница данных** · Ошибки как значения · Отмена · **DOM** · querySelector · События · Формы · Свои события
+- **8.11 TypeScript + React** — `/content/typescript/ts-with-react` · по стандарту
+  **Компоненты и пропсы** · FC или функция · children · Пропсы элементов и чужих компонентов · **Хуки** · useState · useRef · useReducer · Контекст без значения по умолчанию · **События** · currentTarget и target · **Переиспользуемые компоненты** · Дженерик-компоненты · Пропсы-объединения · Полиморфный as
+- **8.12 TypeScript + Vue** — `/content/typescript/ts-with-vue` · по стандарту
+  **script setup и проверка** · **Пропсы, события и v-model** · defineProps · defineEmits · defineModel · **ref, reactive и computed** · Развёртывание · **Ссылки на шаблон** · **provide и inject** · **Дженерик-компоненты и слоты** · **Сторы Pinia** · **Эволюция**
 
 ## 9. Reactjs
 
