@@ -7,11 +7,15 @@ import { project, write, run, bin, codesDir } from '../../_lib/project.mjs';
 import { withPage } from '../../_lib/browser.mjs';
 
 // --- цикл обратной связи ---
+// 400 модулей каталога — чтобы полная сборка была похожа на настоящую, а HMR пересылал один файл
+const modules = Object.fromEntries(Array.from({ length: 400 }, (_, i) => [`catalog/item${i}.js`, `export const item${i} = { id: ${i}, title: 'Товар ${i}', price: ${100 + i} };\n`]));
 const dir = project({
   'package.json': JSON.stringify({ type: 'module' }),
   'index.html': '<!doctype html><div id="app"></div><script type="module" src="/main.js"></script>',
-  'main.js': "import { title } from './title.js';\ndocument.getElementById('app').textContent = title;\nif (import.meta.hot) import.meta.hot.accept('./title.js', (m) => { document.getElementById('app').textContent = m.title; });\n",
+  'main.js': "import { title } from './title.js';\nimport { items } from './catalog.js';\ndocument.getElementById('app').textContent = title;\nwindow.itemsCount = items.length;\nif (import.meta.hot) import.meta.hot.accept('./title.js', (m) => { document.getElementById('app').textContent = m.title; });\n",
+  'catalog.js': Object.keys(modules).map((f, i) => `import { item${i} } from './${f}';`).join('\n') + `\nexport const items = [${Object.keys(modules).map((_, i) => `item${i}`).join(', ')}];\n`,
   'title.js': "export const title = 'Каталог v1';\n",
+  ...modules,
 });
 const { createServer } = await import(join(dir, 'node_modules/vite/dist/node/index.js'));
 const server = await createServer({ root: dir, logLevel: 'silent', server: { port: 0 } });
@@ -22,10 +26,15 @@ try {
   hmrMs = await withPage(async (page) => {
     await page.goto(url);
     await page.waitForFunction(() => document.getElementById('app').textContent === 'Каталог v1');
+    assert.equal(await page.evaluate(() => window.itemsCount), 400);
+    const requested = [];
+    page.on('request', (r) => requested.push(new URL(r.url()).pathname));
     const started = performance.now();
     write(dir, 'title.js', "export const title = 'Каталог v2';\n");
     await page.waitForFunction(() => document.getElementById('app').textContent === 'Каталог v2', null, { timeout: 10000 });
-    return performance.now() - started;
+    const ms = performance.now() - started;
+    assert.deepEqual(requested, ['/title.js']); // из 400+ модулей заново загружен один
+    return ms;
   });
 } finally {
   await server.close();
@@ -34,8 +43,8 @@ const t0 = performance.now();
 const built = run(bin('vite'), ['build', '--logLevel', 'error'], { cwd: dir });
 const buildMs = performance.now() - t0;
 assert.equal(built.status, 0, built.out);
-console.log(`  правка → экран: HMR ${hmrMs.toFixed(0)} мс, полная сборка ${buildMs.toFixed(0)} мс`);
-assert.ok(hmrMs < buildMs, `${hmrMs} < ${buildMs}`);
+console.log(`  правка → экран: HMR ${hmrMs.toFixed(0)} мс, полная сборка 400 модулей ${buildMs.toFixed(0)} мс`);
+assert.ok(hmrMs < 2000, String(hmrMs));
 
 // --- ошибки: в разработке — объяснение, в продакшене — номер и ссылка ---
 const renderInvalid = (env) => spawnSync(process.execPath, ['-e', `
