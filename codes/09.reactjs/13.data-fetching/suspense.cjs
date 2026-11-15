@@ -16,11 +16,11 @@ class Boundary extends React.Component {
 (async () => {
   const client = new QueryClient({ defaultOptions: { queries: { retry: false } } });
   function User() {
-    const { data } = useSuspenseQuery({ queryKey: ['user'], queryFn: () => new Promise((r) => setTimeout(() => r('Ann'), 20)) });
+    const { data } = useSuspenseQuery({ queryKey: ['user'], queryFn: () => new Promise((r) => setTimeout(() => r('Ann'), 200)) });
     return h('i', null, data);
   }
   function Broken() {
-    const { data } = useSuspenseQuery({ queryKey: ['broken'], queryFn: () => new Promise((_, rej) => setTimeout(() => rej(new Error('500')), 20)) });
+    const { data } = useSuspenseQuery({ queryKey: ['broken'], queryFn: () => new Promise((_, rej) => setTimeout(() => rej(new Error('500')), 200)) });
     return h('i', null, data);
   }
   const ui = h(QueryClientProvider, { client },
@@ -28,8 +28,8 @@ class Boundary extends React.Component {
     h(Boundary, null, h(Suspense, { fallback: h('s', null, 'загрузка') }, h(Broken))));
   const orig = console.error; console.error = () => {};
   const { container } = await mount(ui);
-  assert.equal(container.textContent, 'загрузказагрузка');
-  await wait(60);
+  assert.equal(container.textContent, 'загрузказагрузка'); // ответ через 200 мс — запас под нагрузкой полного прогона
+  await wait(400);
   console.error = orig;
   assert.equal(container.textContent, 'Annошибка: 500');
 
