@@ -56,3 +56,15 @@ export async function cost(entryCode, { platform = 'browser' } = {}) {
   const code = output.filter((o) => o.type === 'chunk').map((c) => c.code).join('\n');
   return { min: Buffer.byteLength(code), gzip: gzipSync(code).length, code };
 }
+
+// Прогнать настоящий Vitest на временном проекте и вернуть разобранный JSON-отчёт (глава 13).
+// const r = vitest({ 'sum.test.js': "import { test, expect } from 'vitest'; test('a', () => expect(1).toBe(1));" });
+// r.numPassedTests, r.tests → [{ name, status, failureMessages }], r.out — вывод раннера
+export function vitest(files, { args = [], dir: existing } = {}) {
+  const dir = existing ?? project({ 'package.json': JSON.stringify({ type: 'module' }), ...files });
+  if (existing) for (const [name, content] of Object.entries(files)) write(dir, name, content);
+  const r = run(bin('vitest'), ['run', '--reporter=json', '--outputFile=report.json', ...args], { cwd: dir });
+  const report = JSON.parse(readFileSync(join(dir, 'report.json'), 'utf8'));
+  const tests = report.testResults.flatMap((f) => f.assertionResults.map((t) => ({ file: relative(dir, f.name), name: t.fullName, status: t.status, failureMessages: t.failureMessages, duration: t.duration })));
+  return { ...report, tests, status: r.status, out: r.out, dir };
+}
