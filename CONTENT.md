@@ -181,6 +181,29 @@ grep -rli "event loop" --include="*.md" .
 | source maps, отладка Node.js и сборки, ошибки из продакшена | 11.12 DevTools and debugging (панели DevTools браузера — 3.08) |
 | нативный тулинг: Go и Rust, единые тулчейны | 11.13 Rust and the future |
 
+### Дома понятий экосистемы (глава 12)
+
+Глава 12 — ландшафт библиотек и то, как их выбирать. Механика живёт в своих главах, а здесь — сравнение инструментов, их цена и ловушки.
+
+| Понятие | Где разобрано подробно |
+| --- | --- |
+| строить или брать готовое, критерии выбора, цена зависимости | 12.01 Introduction |
+| менеджеры пакетов, `package.json`, semver, lock-файл, peer-зависимости, скрипты жизненного цикла | 12.02 Package management (разрешение модулей — 11.02, workspaces — 11.11) |
+| UI-библиотеки: готовые, headless, копирование кода, дизайн-системы | 12.03 UI component libraries |
+| выбор инструмента стилизации: Tailwind, CSS-in-JS, zero-runtime, их цена | 12.04 Styling solutions (подходы и методологии CSS — 6.09) |
+| библиотеки форм, схемы валидации, Standard Schema | 12.05 Forms and validation |
+| парадигмы сторов, библиотеки серверного состояния, нормализованный кеш | 12.06 State and data libraries (React — 9.12, 9.13; Vue — 10.12, 10.13) |
+| мета-фреймворки: Next.js, Nuxt, React Router, Astro, SvelteKit, TanStack Start | 12.07 Meta-frameworks (стратегии рендеринга — 9.17) |
+| утилиты: что уже есть в языке, даты, иммутабельность, HTTP-клиенты | 12.08 Utility libraries (`Intl` и `Temporal` — 7.16) |
+| библиотеки анимаций, WAAPI, View Transitions | 12.09 Animation (CSS-анимации — 6.05) |
+| визуализация данных: D3, готовые графики, SVG и Canvas | 12.10 Data visualization |
+| таблицы и гриды, headless-таблицы, виртуализация списков | 12.11 Tables and grids |
+| библиотеки i18n, ICU MessageFormat, загрузка переводов | 12.12 i18n (`Intl` — 7.16) |
+| клиенты API: обёртки над fetch, генерация из OpenAPI, GraphQL-клиенты, tRPC, библиотеки realtime | 12.13 Realtime and API clients (REST, GraphQL, SSE, WebSocket — 4.05, 4.06, 4.11) |
+| редакторы текста, Markdown, подсветка кода, drag and drop, загрузка файлов | 12.14 Rich content and interactions |
+| библиотеки и сервисы аутентификации | 12.15 Auth libraries (токены и сессии — 17.05, 4.09) |
+| сборка своей библиотеки, патчинг чужих зависимостей, ядро и адаптеры | 12.16 Building and patching |
+
 Ссылку можно встроить в абзац («Подробно — в [Event Loop](/content/javascript/event-loop).») или вынести заметкой `> …`.
 
 Примеры «домов»: event loop — 7.08, редакции ES2015+ — 7.16, сборщик мусора и утечки — 7.15, внутренности V8 — 7.01, воркеры — 14.01.

@@ -44,3 +44,15 @@ export function run(cmd, args = [], opts = {}) {
   const r = spawnSync(cmd, args, { encoding: 'utf8', ...opts, env: { ...process.env, NO_COLOR: '1', FORCE_COLOR: '0', ...opts.env } });
   return { status: r.status, stdout: r.stdout ?? '', stderr: r.stderr ?? '', out: (r.stdout ?? '') + (r.stderr ?? '') };
 }
+
+// Сколько стоит код в бандле: собрать точку входа Rolldown с минификацией, вернуть байты до и после gzip.
+// cost("import { debounce } from 'lodash-es'; console.log(debounce);")
+export async function cost(entryCode, { platform = 'browser' } = {}) {
+  const { rolldown } = await import('rolldown');
+  const { gzipSync } = await import('node:zlib');
+  const dir = project({ 'entry.js': entryCode });
+  const bundle = await rolldown({ input: join(dir, 'entry.js'), platform, logLevel: 'silent', cwd: dir });
+  const { output } = await bundle.generate({ format: 'es', minify: true, codeSplitting: false });
+  const code = output.filter((o) => o.type === 'chunk').map((c) => c.code).join('\n');
+  return { min: Buffer.byteLength(code), gzip: gzipSync(code).length, code };
+}
