@@ -225,6 +225,18 @@ grep -rli "event loop" --include="*.md" .
 | контейнеры, Docker для фронтенда, многоэтапная сборка, nginx для SPA | 13.13 Containers and Docker |
 | трекинг ошибок, RUM, логи, метрики и трейсы, алерты | 13.14 Monitoring and observability (Web Vitals — 17.09, source maps — 11.12) |
 
+### Дома понятий дополнительных тем (глава 14)
+
+| Понятие | Где разобрано подробно |
+| --- | --- |
+| Web Workers, передача данных, `Transferable`, `SharedArrayBuffer` и `Atomics`, OffscreenCanvas, Comlink | 14.01 Web workers and concurrency (event loop — 7.08, долгие задачи — 7.15) |
+| WebAssembly: модуль, память, граница с JavaScript, инструменты, WASI | 14.02 WebAssembly |
+| Canvas 2D, `devicePixelRatio`, цикл кадров, WebGL и WebGPU, выбор технологии графики | 14.03 Graphics (SVG и Canvas для графиков — 12.10, CSS-анимации — 6.05) |
+| захват медиа, Web Audio, WebRTC и сигналинг, потоковое видео | 14.04 Media and WebRTC (WebSocket — 4.11) |
+| React Native, Capacitor, Electron, Tauri, PWA как приложение | 14.05 Cross-platform (Service Worker и PWA — 3.09) |
+| ИИ в интерфейсе: ключи на сервере, потоковый ответ, структурированный вывод, вызов инструментов, RAG, модели в браузере | 14.06 AI in the frontend (ИИ в разработке — 15.01, агенты и MCP — 15.02, SSE — 4.11) |
+| соседние области: бэкенд, расширения браузера, мобильная разработка, игры, DevOps | 14.07 Beyond frontend |
+
 Ссылку можно встроить в абзац («Подробно — в [Event Loop](/content/javascript/event-loop).») или вынести заметкой `> …`.
 
 Примеры «домов»: event loop — 7.08, редакции ES2015+ — 7.16, сборщик мусора и утечки — 7.15, внутренности V8 — 7.01, воркеры — 14.01.
