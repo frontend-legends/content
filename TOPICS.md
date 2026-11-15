@@ -519,36 +519,36 @@
 
 ## 19. Common coding questions
 
-- **19.01 Introduction** — `/content/common-coding-questions/introduction`
-  **Что такое фронтенд-раунд** · **Алгоритмы vs фронтенд-задачи** · **Что проверяют на самом деле** · **Как подходить к любой задаче** · **Форматы, в которых это встречается** · **Что будет дальше** · **Вопросы на собеседовании**
-- **19.02 Higher-order utils** — `/content/common-coding-questions/higher-order-utils`
-  **debounce** · **throttle** · **curry** · **memoize** · **compose и pipe** · **once** · **Вопросы на собеседовании**
-- **19.03 Deep operations** — `/content/common-coding-questions/deep-operations`
-  **deepClone** · **deepEqual** · **flatten массива** · **flatten объекта** · **get / set по пути (lodash-style)** · **Вопросы на собеседовании**
-- **19.04 Function polyfills** — `/content/common-coding-questions/function-polyfills`
-  **call** · **apply** · **bind** · **new** · **instanceof** · **Object.create и наследование** · **Вопросы на собеседовании**
-- **19.05 Array polyfills** — `/content/common-coding-questions/array-polyfills`
-  **map** · **filter** · **reduce** · **forEach** · **Array.flat** · **groupBy** · **unique (дедупликация)** · **Вопросы на собеседовании**
-- **19.06 Promises and async** — `/content/common-coding-questions/promises-async`
-  **Promise.all** · **Promise.allSettled** · **Promise.race и Promise.any** · **promisify** · **sleep и retry** · **Ограничение конкурентности (mapLimit)** · **Очередь задач (async series)** · **Вопросы на собеседовании**
-- **19.07 Implement Promise** — `/content/common-coding-questions/implement-promise`
-  **Три состояния** · **Минимальное ядро** · **then с цепочками** · **catch и finally через then** · **Почему именно микротаска** · **Статические методы** · **Простой планировщик задач (бонус)** · **Вопросы на собеседовании**
-- **19.08 Events and pub/sub** — `/content/common-coding-questions/events-and-pubsub`
-  **EventEmitter** · **Pub/Sub (шина событий)** · **Observable (мини-реактивность)** · **Простой Store (Redux-lite)** · **Вопросы на собеседовании**
-- **19.09 DOM tasks** — `/content/common-coding-questions/dom-tasks`
-  **Делегирование событий** · **Свой getElementsByClassName** · **Обход дерева DOM** · **classNames (утилита cn)** · **Свой querySelector (упрощённый)** · **Вопросы на собеседовании**
-- **19.10 UI components: basics** — `/content/common-coding-questions/ui-components-basics`
-  **Что оценивают в machine-coding** · **Tabs (табы)** · **Accordion (аккордеон)** · **Modal (модальное окно)** · **Star rating (рейтинг)** · **Stopwatch / Timer (секундомер)** · **OTP input (код из ячеек)** · **Вопросы на собеседовании**
-- **19.11 UI components: advanced** — `/content/common-coding-questions/ui-components-advanced`
-  **Autocomplete / Typeahead** · **Бесконечный скролл** · **Пагинация** · **Todo (mini-app)** · **Tic-tac-toe (крестики-нолики)** · **Вопросы на собеседовании**
-- **19.12 Framework implementation** — `/content/common-coding-questions/framework-implementation`
-  **signal / effect / computed** · **Vue ref и reactive** · **Хуки React (useState с нуля)** · **Кастомные хуки** · **Teleport / createPortal** · **Мини-VDOM и render** · **Мини-фреймворк (всё вместе)** · **Вопросы на собеседовании**
-- **19.13 Caching and state** — `/content/common-coding-questions/caching-and-state`
-  **LRU Cache** · **Rate limiter** · **Мемоизированный селектор** · **Мини-стор с подпиской** · **Вопросы на собеседовании**
-- **19.14 Tricky and output** — `/content/common-coding-questions/tricky-and-output`
-  **Порядок event loop** · **Замыкания в цикле** · **this и контекст вызова** · **Hoisting и TDZ** · **Приведение типов** · **Reference vs value** · **Вопросы на собеседовании**
-- **19.15 How to approach** — `/content/common-coding-questions/how-to-approach`
-  **Универсальный алгоритм решения** · **Уточняющие вопросы** · **Думай вслух** · **Сложность не забывается** · **Частые ошибки** · **Чеклист перед «готово»** · **Куда дальше** · **Вопросы на собеседовании**
+- **19.01 Introduction** — `/content/common-coding-questions/introduction` · по стандарту
+  **Что такое фронтенд-раунд** · **Что проверяют на самом деле** · Сложность всё ещё важна · **Как подходить к задаче** · **Что будет дальше**
+- **19.02 Higher-order utils** — `/content/common-coding-questions/higher-order-utils` · по стандарту
+  **debounce** · Почему не стрелка · leading и cancel · **throttle** · **curry** · **memoize** · **compose и pipe** · **once**
+- **19.03 Deep operations** — `/content/common-coding-questions/deep-operations` · по стандарту
+  **deepClone** · Сначала встроенное · Рекурсивная реализация · **deepEqual** · **flatten массива** · **flatten объекта** · **get и set по пути**
+- **19.04 Function polyfills** — `/content/common-coding-questions/function-polyfills` · по стандарту
+  **call и apply** · **bind** · **new** · **instanceof** · **Object.create и наследование**
+- **19.05 Array polyfills** — `/content/common-coding-questions/array-polyfills` · по стандарту
+  **map** · **filter и forEach** · **reduce** · **flat** · **groupBy** · **unique**
+- **19.06 Promises and async** — `/content/common-coding-questions/promises-async` · по стандарту
+  **Promise.all** · **Promise.allSettled** · **Promise.race и Promise.any** · **promisify** · **sleep и retry** · **Ограничение конкурентности** · **Очередь задач**
+- **19.07 Implement Promise** — `/content/common-coding-questions/implement-promise` · по стандарту
+  **Состояния и ядро** · **then и цепочки** · **Процедура разрешения** · **Почему микрозадача** · **catch, finally и статические методы** · **Проверка стандартом**
+- **19.08 Events and pub/sub** — `/content/common-coding-questions/events-and-pubsub` · по стандарту
+  **EventEmitter** · Снимок при emit · once · Дубли и ошибки · **Pub/sub** · **Observable** · **Мини-стор**
+- **19.09 DOM tasks** — `/content/common-coding-questions/dom-tasks` · по стандарту
+  **Делегирование событий** · Зачем parent.contains · События, которые не всплывают · **Свой getElementsByClassName** · **Свой querySelector** · **Обход дерева** · **classNames**
+- **19.10 UI components: basics** — `/content/common-coding-questions/ui-components-basics` · по стандарту
+  **Что оценивают** · **Табы** · **Аккордеон** · **Модалка** · **Рейтинг** · **Секундомер** · **Код из SMS**
+- **19.11 UI components: advanced** — `/content/common-coding-questions/ui-components-advanced` · по стандарту
+  **Автокомплит** · Ловушка исходной версии · Исправленная версия · **Бесконечная прокрутка** · **Пагинация** · **Todo** · **Крестики-нолики**
+- **19.12 Framework implementation** — `/content/common-coding-questions/framework-implementation` · по стандарту
+  **Сигналы** · Наивная версия и её ошибки · Исправленная версия · **Реактивность Vue** · Зачем ref и .value · **useState с нуля** · Почему хуки нельзя вызывать в условии · **Кастомные хуки** · **Порталы** · **Мини-VDOM** · Атрибуты и слушатели · patch · **Мини-фреймворк**
+- **19.13 Caching and state** — `/content/common-coding-questions/caching-and-state` · по стандарту
+  **LRU-кеш** · На Map · На двусвязном списке · **Ограничитель частоты** · **Мемоизированный селектор** · **Мини-стор** · Подключение к React
+- **19.14 Tricky and output** — `/content/common-coding-questions/tricky-and-output` · по стандарту
+  **Порядок event loop** · Посложнее · **Замыкания в цикле** · **this и контекст вызова** · **Подъём и TDZ** · **Приведение типов** · **Ссылка и значение**
+- **19.15 How to approach** — `/content/common-coding-questions/how-to-approach` · по стандарту
+  **Алгоритм решения** · **Разбор: chunk** · Шаг 1. Уточнить · Шаг 2. Примеры · Шаг 3. Простое решение · Шаг 5–6. Краевые случаи и прогон · Шаг 4. Сложность · **Думать вслух** · **Сложность не забывается** · **Частые ошибки** · **Чеклист перед «готово»** · **Куда дальше**
 
 ## 20. Final steps
 
