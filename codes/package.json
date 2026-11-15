@@ -99,6 +99,7 @@
     "pinia": "^4.1.0",
     "playwright-core": "^1.57.0",
     "prettier": "^3.10.1",
+    "promises-aplus-tests": "^2.1.2",
     "publint": "^0.3.25",
     "react": "19.3.1",
     "react-dom": "19.3.1",
