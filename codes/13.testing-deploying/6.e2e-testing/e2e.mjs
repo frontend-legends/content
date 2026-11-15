@@ -1,23 +1,8 @@
 // Проверки к 13.06: настоящий Playwright Test — автоожидание, перекрытая кнопка, строгие локаторы,
 // подмена сети, повтор и «flaky», изоляция контекстов, сохранённый вход.
 import assert from 'node:assert/strict';
-import { existsSync, readdirSync } from 'node:fs';
-import { homedir } from 'node:os';
-import { join } from 'node:path';
 import { project, run, bin, read } from '../../_lib/project.mjs';
-
-// тот же браузер, что у _lib/browser.mjs
-function chromiumPath() {
-  if (process.env.CHROMIUM_PATH) return process.env.CHROMIUM_PATH;
-  for (const dir of [join(homedir(), 'Library/Caches/ms-playwright'), join(homedir(), '.cache/ms-playwright')]) {
-    if (!existsSync(dir)) continue;
-    for (const d of readdirSync(dir).filter((n) => n.startsWith('chromium_headless_shell-')).sort().reverse()) {
-      for (const b of ['chrome-headless-shell-mac-arm64/chrome-headless-shell', 'chrome-headless-shell-linux64/chrome-headless-shell']) {
-        if (existsSync(join(dir, d, b))) return join(dir, d, b);
-      }
-    }
-  }
-}
+import { findChromium } from '../../_lib/browser.mjs';
 
 const server = `import { createServer } from 'node:http';
 const pages = {
@@ -48,7 +33,7 @@ export default defineConfig({
   timeout: 5000,
   expect: { timeout: 2000 },
   reporter: [['json', { outputFile: 'report.json' }]],
-  use: { baseURL: 'http://localhost:4173', launchOptions: { executablePath: ${JSON.stringify(chromiumPath() ?? '')} || undefined } },
+  use: { baseURL: 'http://localhost:4173', launchOptions: { executablePath: ${JSON.stringify(findChromium() ?? '')} || undefined } },
   webServer: { command: 'node server.mjs', url: 'http://localhost:4173', reuseExistingServer: false },
 });
 `;
