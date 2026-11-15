@@ -138,6 +138,31 @@ grep -rli "event loop" --include="*.md" .
 
 9.09 — карта всех встроенных хуков по задачам: на каждый хук задача, главные грабли и ссылка на дом. Полный разбор в 9.09 — только у хуков, чей дом в этой таблице 9.09.
 
+### Дома понятий Vue (глава 10)
+
+| Понятие | Где разобрано подробно |
+| --- | --- |
+| что такое Vue, прогрессивный фреймворк, SFC, компилятор и рантайм, как менялся Vue | 10.01 Introduction |
+| синтаксис шаблона, директивы, `v-if`/`v-show`, `v-for` и `key`, классы и стили, модификаторы, `v-model` на элементах, свои директивы, во что компилируется шаблон | 10.02 Templates and directives |
+| `ref`, `reactive`, `.value`, Proxy, отслеживание и запуск эффектов, разворачивание, потеря реактивности | 10.03 Reactivity fundamentals |
+| `<script setup>`, `setup()`, жизненный цикл, макросы компилятора, Options API | 10.04 Composition API |
+| `computed`, `watch`, `watchEffect`, `flush`, очистка и остановка наблюдателей | 10.05 Computed and watchers |
+| пропсы, события, `v-model` на компонентах и `defineModel`, fallthrough-атрибуты | 10.06 Components communication |
+| слоты, scoped slots, renderless-компоненты | 10.07 Slots |
+| `provide`/`inject` | 10.08 Provide/inject |
+| композаблы, VueUse | 10.09 Composables |
+| `shallowRef`, `readonly`, `toRaw`/`markRaw`, `customRef`, `effectScope`, `nextTick` и планировщик | 10.10 Reactivity advanced |
+| `Teleport`, `Suspense`, `KeepAlive`, асинхронные компоненты, `Transition` | 10.11 Built-in components |
+| Pinia | 10.12 State management |
+| загрузка данных во Vue, TanStack Query, `useFetch` в Nuxt | 10.13 Data fetching |
+| Vue Router | 10.14 Routing |
+| оптимизации компилятора, `v-once`, `v-memo`, виртуализация, Vapor mode | 10.15 Performance |
+| `v-html`, URL, пользовательские шаблоны | 10.16 Security (общее про XSS — 17.02) |
+| SSR во Vue, гидратация, Nuxt | 10.17 Rendering and Nuxt (стратегии рендеринга в целом — 9.17) |
+| тестирование Vue | 10.18 Testing Vue (стратегия тестирования — 13.02) |
+| типы во Vue | 8.12 TS with Vue |
+| реактивное программирование в целом, сигналы, `ref` с нуля | 1.10, 15.04, 19 |
+
 Ссылку можно встроить в абзац («Подробно — в [Event Loop](/content/javascript/event-loop).») или вынести заметкой `> …`.
 
 Примеры «домов»: event loop — 7.08, редакции ES2015+ — 7.16, сборщик мусора и утечки — 7.15, внутренности V8 — 7.01, воркеры — 14.01.
