@@ -40,12 +40,18 @@ const cacheDir = fileURLToPath(new URL('./.sfc-cache/', import.meta.url));
 mkdirSync(cacheDir, { recursive: true });
 
 let counter = 0;
-export async function sfc(source, filename = `Comp${++counter}.vue`) {
-  const id = createHash('sha1').update(source).digest('hex').slice(0, 8);
+// opts.dev = true — как в dev-сервере Vite: шаблон отдельно от setup (inlineTemplate: false),
+// setup возвращает привязки, и они доступны снаружи, например через wrapper.vm в тестах
+export async function sfc(source, filename = `Comp${++counter}.vue`, opts = {}) {
+  const id = createHash('sha1').update(source + (opts.dev ? ':dev' : '')).digest('hex').slice(0, 8);
   const { descriptor, errors } = parse(source, { filename });
   if (errors.length) throw errors[0];
   let code;
-  if (descriptor.script || descriptor.scriptSetup) {
+  if (opts.dev && descriptor.scriptSetup) {
+    const script = compileScript(descriptor, { id, inlineTemplate: false, propsDestructure: true });
+    const t = compileTemplate({ source: descriptor.template.content, filename, id, compilerOptions: { bindingMetadata: script.bindings, prefixIdentifiers: true } });
+    code = script.content.replace('export default', 'const __sfc__ =') + '\n' + t.code.replace('export function render', 'function render') + '\n__sfc__.render = render;\nexport default __sfc__;';
+  } else if (descriptor.script || descriptor.scriptSetup) {
     const script = compileScript(descriptor, { id, inlineTemplate: true, propsDestructure: true });
     code = script.content;
     if (!descriptor.scriptSetup && descriptor.template) {
@@ -66,6 +72,8 @@ export async function sfc(source, filename = `Comp${++counter}.vue`) {
   // scoped-стили: сборщик (плагин Vite) выставляет компоненту __scopeId, здесь — то же самое
   if (descriptor.styles.some((s) => s.scoped)) comp.__scopeId = `data-v-${id}`;
   comp.__styles = descriptor.styles.map((s) => s.content);
+  // имя из файла, как у плагина Vite: видно в предупреждениях, DevTools и заглушках тестов
+  if (!comp.name && !comp.__name) comp.__name = filename.replace(/\.vue$/, '');
   return comp;
 }
 
