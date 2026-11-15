@@ -27,6 +27,7 @@
     "react-redux": "^9.3.1",
     "react-router": "^7.18.5",
     "react-server-dom-webpack": "^19.3.1",
+    "temporal-polyfill": "^0.3.2",
     "tsx": "^4.23.15",
     "typescript": "^5.9.3",
     "vue": "^3.5.45",
