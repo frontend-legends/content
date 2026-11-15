@@ -29,8 +29,9 @@
     "react-server-dom-webpack": "^19.3.1",
     "temporal-polyfill": "^0.3.2",
     "tsx": "^4.23.15",
-    "typescript": "^5.9.3",
+    "typescript": "^7.0.2",
     "vue": "^3.5.45",
+    "zod": "^4.6.7",
     "zustand": "^5.1.0"
   }
 }

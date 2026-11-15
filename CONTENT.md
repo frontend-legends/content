@@ -103,6 +103,24 @@ grep -rli "event loop" --include="*.md" .
 | сборщик мусора, утечки, `WeakRef`, `FinalizationRegistry`, Performance API | 7.15 Memory and performance |
 | редакции ES2015+, JSON, `Intl`, `Temporal` | 7.16 Modern JS |
 
+### Дома понятий TypeScript (глава 8)
+
+| Понятие | Где разобрано подробно |
+| --- | --- |
+| что такое TS, стирание типов, структурная типизация, вывод типов, где TS не защищает | 8.01 Introduction |
+| примитивы, `any`/`unknown`/`never`/`void`, литералы, `enum`, массивы и кортежи, проверка лишних свойств, `as const`, `satisfies` | 8.02 Basic types |
+| типы функций, перегрузки, `this`, классы и модификаторы, `private` против `#`, декораторы | 8.03 Functions and classes |
+| объединения и пересечения, `type` против `interface`, индексные сигнатуры, `keyof`/`typeof`/индексный доступ, module augmentation | 8.04 Composing types |
+| сужение типов, размеченные объединения, type guards, `asserts`, проверка полноты через `never` | 8.05 Type narrowing |
+| дженерики, ограничения, значения по умолчанию, `const`-параметры, вариантность | 8.06 Generics |
+| встроенные utility types | 8.07 Utility types |
+| mapped, conditional, `infer`, распределение, шаблонные литеральные и рекурсивные типы, брендирование | 8.08 Advanced types |
+| смысл опций tsconfig, `strict`, `.d.ts`, `@types`, ESM и CJS в TS | 8.09 Project setup |
+| конвейер инструментов: проверка типов против транспиляции, CI, project references, язык-сервер | 11.06 TypeScript tooling |
+| типизация промисов, `fetch` и DOM, граница данных из сети | 8.10 Async and DOM |
+| типы в React | 8.11 TS with React |
+| типы во Vue | 8.12 TS with Vue |
+
 ### Дома хуков React (глава 9)
 
 | Хук | Где разобран подробно |
