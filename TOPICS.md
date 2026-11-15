@@ -311,32 +311,32 @@
 
 ## 11. Advanced Tooling
 
-- **11.01 Introduction** — `/content/advanced-tooling/introduction`
-  **Зачем вообще нужен тулинг** · **Конвейер сборки** · **Dev vs prod** · **Из чего состоит тулчейн** · **«Zero-config» и почему он не магия** · **Вопросы на собеседовании**
-- **11.02 Module systems** — `/content/advanced-tooling/module-systems`
-  **Зачем модули** · **CommonJS (CJS)** · **ES Modules (ESM)** · **Главное различие: статика vs динамика** · **Named vs default** · **Динамический import()** · **UMD** · **Разрешение модулей** · **Боль interop (ESM ↔ CJS)** · **Tree-shakeability - сводка** · **Вопросы на собеседовании**
-- **11.03 Bundlers** — `/content/advanced-tooling/bundlers`
-  **Зачем бандлить** · **Как работает бандлер** · **Базовые понятия** · **Ландшафт** · Webpack · Rollup · esbuild · **Бандлер приложения vs библиотеки** · **Vite** · **Вопросы на собеседовании**
-- **11.04 Vite and dev servers** — `/content/advanced-tooling/vite-and-dev-servers`
-  **Старая проблема** · **Идея Vite** · **Архитектура dev-режима** · 1. Пребандлинг зависимостей (esbuild) · 2. Отдача исходников по требованию · **HMR - Hot Module Replacement** · **Prod-сборка** · **Другие функции dev-сервера** · **Vite vs webpack-dev-server** · **Вопросы на собеседовании**
-- **11.05 Transpilation** — `/content/advanced-tooling/transpilation`
-  **Что это и зачем** · **Как работает** · **Транспиляция vs полифил** · **Targets и browserslist** · **Инструменты** · Babel · SWC и esbuild · **Главная ловушка: они НЕ проверяют типы** · **AST и кодмоды** · **Вопросы на собеседовании**
-- **11.06 TypeScript tooling** — `/content/advanced-tooling/typescript-tooling`
-  **Две роли tsc** · **Современное разделение** · **isolatedModules** · **Ключевые опции tsconfig** · **Проверка типов в CI** · **Генерация .d.ts** · **Project references** · **Language Server** · **Вопросы на собеседовании**
-- **11.07 Optimization** — `/content/advanced-tooling/optimization`
-  **Минификация** · **Tree-shaking** · **Code splitting** · **Scope hoisting** · **Хеширование и кеш** · **Сжатие** · **Source maps** · **Когда tree-shaking не срабатывает** · **Анализ бандла** · **Ассеты** · **Вопросы на собеседовании**
-- **11.08 Linting and formatting** — `/content/advanced-tooling/linting-and-formatting`
-  **Линтер ≠ форматтер** · **ESLint** · **Prettier** · **Biome и новое поколение** · **Stylelint** · **Интеграция** · **Кастомные правила** · **Вопросы на собеседовании**
-- **11.09 Git hooks and quality gates** — `/content/advanced-tooling/git-hooks-and-quality-gates`
-  **Что такое git-хуки** · **husky** · **lint-staged** · **Conventional Commits и commitlint** · **Оборона в глубину** · **Что куда** · **Вопросы на собеседовании**
-- **11.10 CI/CD** — `/content/advanced-tooling/ci-cd`
-  **CI и CD** · **Пайплайн фронтенда** · **GitHub Actions** · **Фронтенд-специфичные гейты** · **Ускорение пайплайна** · **Branch protection** · **Превью-деплои** · **CD** · **Вопросы на собеседовании**
-- **11.11 Monorepo tooling** — `/content/advanced-tooling/monorepo-tooling`
-  **Монорепо vs полирепо** · **Workspaces - основа** · **Проблема масштаба** · **Оркестраторы задач** · Turborepo · Nx · **Кеширование задач** · **Affected / инкрементальность** · **Внутренние пакеты** · **Когда монорепо** · **Вопросы на собеседовании**
-- **11.12 DevTools and debugging** — `/content/advanced-tooling/devtools-and-debugging`
-  **Панели Chrome DevTools** · **Network** · **Performance** · **Memory** · **Application** · **Отладка с брейкпоинтами** · **Source maps в отладке** · **DevTools фреймворков** · **Console - больше, чем log** · **Lighthouse** · **Вопросы на собеседовании**
-- **11.13 Rust and the future** — `/content/advanced-tooling/rust-and-the-future`
-  **Почему JS-тулинг был медленным** · **Почему Go и Rust** · **Пионер: esbuild** · **Волна Rust** · **Консолидация: единые тулчейны** · **Компромиссы** · **Связь с главой** · **Вопросы на собеседовании**
+- **11.01 Introduction** — `/content/advanced-tooling/introduction` · по стандарту
+  **Зачем нужен тулинг** · **Конвейер сборки** · **Разработка и продакшен** · Код для разработки · Хеши · **Из чего состоит тулчейн** · Ноль настроек — не ноль конвейера · **Куда движется тулинг** · **Как менялся тулинг**
+- **11.02 Module systems** — `/content/advanced-tooling/module-systems` · по стандарту
+  **Модули как язык и как инструменты** · **Как импорт находит пакет** · Поле exports · Формат файла · **Совместимость форматов** · ESM импортирует CommonJS · CommonJS загружает ESM · Флаг __esModule · **Двойной пакет** · **Модули в браузере**
+- **11.03 Bundlers** — `/content/advanced-tooling/bundlers` · по стандарту
+  **Зачем бандлить** · **Как работает бандлер** · Чанки · Scope hoisting · **Плагины** · Загрузчики и плагины в webpack · **Ландшафт** · **Приложение и библиотека**
+- **11.04 Vite and dev servers** — `/content/advanced-tooling/vite-and-dev-servers` · по стандарту
+  **Старая проблема** · **Разработка без сборки** · Пребандлинг зависимостей · **HMR** · **Окружение и ассеты** · Переменные окружения · Ассеты · Остальное · **Продакшен-сборка** · **Vite и webpack-dev-server** · **Как менялся Vite**
+- **11.05 Transpilation** — `/content/advanced-tooling/transpilation` · по стандарту
+  **Синтаксис и API** · Полифилы · **Цели и browserslist** · Значения по умолчанию · **Что понизить нельзя** · **Типы стираются без проверки** · **Инструменты** · **AST и кодмоды**
+- **11.06 TypeScript tooling** — `/content/advanced-tooling/typescript-tooling` · по стандарту
+  **Две роли tsc** · **Ограничения пофайловой трансформации** · isolatedModules · verbatimModuleSyntax · **Объявления типов** · **Скорость проверки** · Инкрементальность · Project references · TypeScript 7 · **Проверка в CI и в редакторе**
+- **11.07 Optimization** — `/content/advanced-tooling/optimization` · по стандарту
+  **Минификация** · **Tree shaking глазами бандлера** · Что ещё мешает · **Поле sideEffects** · Ловушка со стилями · **Разбиение на чанки** · **Сжатие** · **Анализ бандла**
+- **11.08 Linting and formatting** — `/content/advanced-tooling/linting-and-formatting` · по стандарту
+  **Линтер и форматтер** · **ESLint** · Как он находит ошибки · Flat config · Автоисправление · Своё правило · Правила с типами · **Форматтеры** · ESLint и Prettier вместе · **Нативные инструменты** · Stylelint · **Где запускать**
+- **11.09 Git hooks and quality gates** — `/content/advanced-tooling/git-hooks-and-quality-gates` · по стандарту
+  **Что такое git-хуки** · Почему хуки не доходят до коллег · **husky** · **lint-staged** · Частично подготовленные файлы · Что не класть в pre-commit · **Conventional Commits и commitlint** · **Оборона в глубину**
+- **11.10 CI/CD** — `/content/advanced-tooling/ci-cd` · по стандарту
+  **CI и CD** · **Пайплайн фронтенда** · GitHub Actions · **Воспроизводимая установка** · **Ускорение** · Кеш зависимостей · Не делать лишнего · **Гейты качества** · Бюджет размера · Защита веток · **Превью и выкладка**
+- **11.11 Monorepo tooling** — `/content/advanced-tooling/monorepo-tooling` · по стандарту
+  **Зачем монорепо** · **Workspaces** · Призрачные зависимости · **Оркестраторы задач** · Кеш задач · Только затронутое · Turborepo и Nx · **Внутренние пакеты** · **Когда монорепо**
+- **11.12 DevTools and debugging** — `/content/advanced-tooling/devtools-and-debugging` · по стандарту
+  **Зачем source maps** · **Что внутри карты** · Восстановление позиции · **Режимы карт и что выкладывать** · Публичная карта — это исходный код · **Ошибки из продакшена** · **Node.js** · Отладчик для Node.js · **Отладка сборки** · Инструменты фреймворков
+- **11.13 Rust and the future** — `/content/advanced-tooling/rust-and-the-future` · по стандарту
+  **Почему JavaScript-тулинг был медленным** · **Что это дало** · **Как к этому пришли** · **Консолидация** · **Цена** · Граница с JavaScript · Остальное · Как приходит бинарник · **Что это значит для разработчика**
 
 ## 12. Ecosystem libs
 

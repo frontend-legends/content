@@ -4,7 +4,7 @@
 import assert from 'node:assert/strict';
 import { gzipSync, brotliCompressSync } from 'node:zlib';
 import { join } from 'node:path';
-import { project, read, list } from '../../_lib/project.mjs';
+import { project, read, list, codesDir } from '../../_lib/project.mjs';
 import { rolldown } from 'rolldown';
 import { build } from 'vite';
 import { minify } from 'rolldown/experimental';
@@ -88,7 +88,7 @@ assert.deepEqual(await uiKit(['*.css', './index.js']), { css: true, chart: false
 
 // --- сжатие: минификация и сжатие складываются; brotli меньше gzip
 {
-  const vueProd = read(join(process.cwd(), '../../node_modules/vue/dist'), 'vue.runtime.esm-browser.prod.js');
+  const vueProd = read(join(codesDir, 'node_modules/vue/dist'), 'vue.runtime.esm-browser.prod.js');
   const raw = Buffer.byteLength(vueProd);
   const gz = gzipSync(vueProd, { level: 9 }).length;
   const br = brotliCompressSync(vueProd).length;
