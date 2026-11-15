@@ -1,0 +1,9 @@
+{
+  "name": "fixture-openapi",
+  "private": true,
+  "description": "openapi-typescript требует TypeScript 5, а в codes/ — TypeScript 7",
+  "devDependencies": {
+    "openapi-typescript": "7.13.0",
+    "typescript": "5.9.3"
+  }
+}
