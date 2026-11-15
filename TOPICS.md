@@ -272,42 +272,42 @@
 
 ## 10. Vuejs
 
-- **10.01 Introduction** — `/content/vuejs/introduction`
-  **Декларативность и реактивность** · **Single-File Components** · **Два API: Composition и Options** · **История** · **Vue vs React vs Angular** · **Что входит в экосистему** · **Вопросы на собеседовании**
-- **10.02 Templates and directives** — `/content/vuejs/templates-and-directives`
-  **Интерполяция и привязки** · **Условный рендеринг: v-if vs v-show** · **Списки: v-for и key** · **Привязка классов и стилей** · **Модификаторы директив** · **v-model** · **Динамические компоненты** · **Кастомные директивы** · **Шаблоны vs JSX** · **Вопросы на собеседовании**
-- **10.03 Reactivity fundamentals** — `/content/vuejs/reactivity-fundamentals`
-  **ref и reactive** · **Зачем .value** · **Как работает реактивность** · **Vue 2 vs Vue 3: почему Proxy** · **Подводные камни реактивности** · 1. Деструктуризация reactive теряет реактивность · 2. Переприсваивание reactive рвёт связь · 3. reactive не работает с примитивами · 4. ref внутри reactive разворачивается · **Тонкости разворачивания ref** · **ref или reactive: что выбирать** · **Сравнение с React** · **Вопросы на собеседовании**
-- **10.04 Composition API** — `/content/vuejs/composition-api`
-  **script setup** · **Функция setup() под капотом** · **Хуки жизненного цикла** · Карта жизненного цикла · **Компиляторные макросы** · **Options API (legacy-теория)** · **Почему Composition победил** · Mixins как legacy · **Когда что использовать** · **Вопросы на собеседовании**
-- **10.05 Computed and watchers** — `/content/vuejs/computed-and-watchers`
-  **computed - кэшируемое производное значение** · computed vs метод · Writable computed · **watch - явное наблюдение** · Опции watch · **watchEffect - автоматические зависимости** · **watch vs watchEffect** · **Время срабатывания (flush)** · **Остановка наблюдателей** · **Что выбрать** · **Вопросы на собеседовании**
-- **10.06 Components communication** — `/content/vuejs/components-communication`
-  **Props - данные вниз** · **Emits - события вверх** · **v-model на компонентах** · defineModel (Vue 3.4+) · Несколько v-model и аргументы · **Fallthrough-атрибуты** · **Способы обмена данными - сводка** · **Вопросы на собеседовании**
-- **10.07 Slots** — `/content/vuejs/slots`
-  **Дефолтный слот** · Запасное содержимое · **Именованные слоты** · **Scoped slots - данные из компонента в слот** · **Renderless-компоненты** · **Динамические имена слотов** · **Слоты vs React** · **Вопросы на собеседовании**
-- **10.08 Provide / Inject** — `/content/vuejs/provide-inject`
-  **Проблема prop drilling** · **Как работает** · **Реактивность инъекций** · **Injection keys и значения по умолчанию** · **Уровень приложения** · **Сравнение с React Context** · **Когда использовать** · **Вопросы на собеседовании**
-- **10.09 Composables** — `/content/vuejs/composables`
-  **Что это и зачем** · **Конвенции** · Принимай и значения, и ref'ы · **Composables vs кастомные хуки React** · **Composables vs mixins (legacy)** · **Композиция composables** · **VueUse** · **Вопросы на собеседовании**
-- **10.10 Reactivity advanced** — `/content/vuejs/reactivity-advanced`
-  **shallowRef и shallowReactive** · **readonly** · **toRaw и markRaw** · **customRef** · **effectScope** · **nextTick** · **toRef / toRefs / toValue - напоминание** · **Вопросы на собеседовании**
-- **10.11 Built-in components** — `/content/vuejs/built-in-components`
-  **Teleport - рендер в другое место DOM** · **Suspense - ожидание асинхронного** · **KeepAlive - кэш переключаемых компонентов** · **Асинхронные компоненты** · **Transition и TransitionGroup** · **Сводка** · **Вопросы на собеседовании**
-- **10.12 State management** — `/content/vuejs/state-management`
-  **Таксономия состояния** · **Лестница решений** · **Pinia** · Setup-стор (рекомендуется) · Options-стор · Использование · **Pinia vs Vuex (legacy)** · **Реактивность вместо селекторов** · **Вопросы на собеседовании**
-- **10.13 Data fetching** — `/content/vuejs/data-fetching`
-  **Почему server state особенный** · **Наивная загрузка и её проблемы** · **TanStack Query (Vue Query)** · **Кэш и инвалидация** · **Suspense для async setup** · **Загрузка в Nuxt** · **Водопады запросов** · **Вопросы на собеседовании**
-- **10.14 Routing** — `/content/vuejs/routing`
-  **SPA-роутинг кратко** · **Vue Router** · **Доступ к маршруту** · **Вложенные маршруты** · **Навигационные guard'ы** · **Ленивые маршруты** · **URL как состояние** · **Роутинг в Nuxt** · **Вопросы на собеседовании**
-- **10.15 Performance** — `/content/vuejs/performance`
-  **Что Vue оптимизирует сам** · **v-once** · **v-memo** · **computed-кэш** · **KeepAlive** · **Code splitting** · **Виртуализация списков** · **Реактивность под нагрузкой** · **Vapor mode** · **Профайлинг** · **Чеклист** · **Вопросы на собеседовании**
-- **10.16 Security** — `/content/vuejs/security`
-  **XSS и автоэкранирование** · **v-html** · **Инъекции через URL** · **Не компилируй пользовательские шаблоны** · **Секреты не живут на клиенте** · **Прочее** · **Вопросы на собеседовании**
-- **10.17 Rendering and Nuxt** — `/content/vuejs/rendering-and-nuxt`
-  **Стратегии рендеринга** · **SSR во Vue** · **Гидратация** · Hydration mismatch · **Nuxt** · **Режимы рендеринга Nuxt** · **Islands и серверные компоненты** · **Как выбрать** · **Вопросы на собеседовании**
-- **10.18 Testing Vue** — `/content/vuejs/testing-vue`
-  **Философия: behavior over implementation** · **Vue Test Utils** · Проверка событий · Props и v-model · **Testing Library для Vue** · **Асинхронность** · **Тестирование composables** · **Моки и сеть** · **Пирамида тестов** · **Вопросы на собеседовании**
+- **10.01 Introduction** — `/content/vuejs/introduction` · по стандарту
+  **Что такое Vue** · **Как шаблон становится DOM** · Что компилятор знает о шаблоне · **Что запускает обновление** · **Однофайловые компоненты** · Как работает scoped · **Два API** · **Экосистема** · Vue, React и Angular · **Как менялся Vue**
+- **10.02 Templates and directives** — `/content/vuejs/templates-and-directives` · по стандарту
+  **Что такое шаблон** · Интерполяция · Выражения · Привязки атрибутов · **Условия: v-if и v-show** · **Списки: v-for и key** · Зачем key · v-if и v-for вместе · **Классы и стили** · **События и модификаторы** · **v-model** · Модификаторы · Ввод через IME · **Динамические компоненты и свои директивы** · `component :is` · Свои директивы · **Шаблоны или JSX**
+- **10.03 Reactivity fundamentals** — `/content/vuejs/reactivity-fundamentals` · по стандарту
+  **Что такое реактивность** · **Как это работает** · Следствия механизма · **ref и reactive** · Зачем .value · ref с объектом · reactive · Почему Proxy, а не геттеры · **Разворачивание ref** · **Где реактивность теряется** · Деструктуризация reactive · Передача значения в функцию · Замена reactive целиком · Деструктуризация в шаблоне и при возврате · **ref или reactive** · **Когда обновится DOM** · Живая ссылка и снимок
+- **10.04 Composition API** — `/content/vuejs/composition-api` · по стандарту
+  **Что такое Composition API** · **setup и script setup** · setup выполняется один раз · Что ещё делает script setup · **Жизненный цикл** · Порядок родителя и ребёнка · Хуки и await · Хуки или watch · **Макросы компилятора** · Закрытый компонент · **Options API** · Миксины · Сравнение
+- **10.05 Computed and watchers** — `/content/vuejs/computed-and-watchers` · по стандарту
+  **computed** · computed или метод · Стабильность значения · Правила · **watch** · Источники · Опции · Пачка изменений — один вызов · **watchEffect** · watch или watchEffect · **Когда вызывается колбэк** · **Очистка и гонки** · **Остановка** · **Что выбрать**
+- **10.06 Components communication** — `/content/vuejs/components-communication` · по стандарту
+  **Пропсы** · Проверки · Пропсы только для чтения · Свой экземпляр значения · **События** · События не всплывают · Зачем объявлять события · **v-model на компоненте** · defineModel · Несколько моделей и модификаторы · **Fallthrough-атрибуты** · Когда корень не тот · **Как выбрать способ связи**
+- **10.07 Slots** — `/content/vuejs/slots` · по стандарту
+  **Слот по умолчанию** · Область видимости · **Именованные слоты и запасное содержимое** · Проверка наличия слота · Динамические имена · **Scoped-слоты** · **Как работают слоты** · Невызванный слот ничего не создаёт · Зависимость слота принадлежит ребёнку · **Renderless-компоненты** · **Слоты и React**
+- **10.08 Provide/inject** — `/content/vuejs/provide-inject` · по стандарту
+  **Проблема** · **Как ищется значение** · Уровень приложения · **Реактивность** · Кто меняет данные · Точечные обновления · **Ключи и значения по умолчанию** · Значения по умолчанию · Ключи-символы · **Когда что использовать**
+- **10.09 Composables** — `/content/vuejs/composables` · по стандарту
+  **Что такое композабл** · Логика, а не состояние · **Аргументы** · **Что возвращать** · **Очистка** · onScopeDispose · **Общее состояние** · Опасность на сервере · **Композаблы, миксины и renderless-компоненты** · Чем композаблы отличаются от хуков React · **VueUse**
+- **10.10 Reactivity advanced** — `/content/vuejs/reactivity-advanced` · по стандарту
+  **Когда глубокая реактивность лишняя** · **shallowRef и shallowReactive** · **readonly** · **toRaw и markRaw** · Почему класс падает в reactive · **customRef** · **effectScope** · **Очередь обновлений и nextTick** · nextTick · Бесконечный цикл
+- **10.11 Built-in components** — `/content/vuejs/built-in-components` · по стандарту
+  **Teleport** · Куда всплывает клик · Цель и отключение · **Suspense** · **KeepAlive** · Что меняется · include, exclude и max · **Асинхронные компоненты** · **Transition и TransitionGroup**
+- **10.12 State management** — `/content/vuejs/state-management` · по стандарту
+  **Какое это состояние** · **Pinia** · Setup-стор · Options-стор · Возвращай всё состояние · **Использование** · Изменение состояния · $reset · Сторы, которые используют другие сторы · **Селекторы не нужны** · **Pinia и Vuex** · **SSR и плагины** · Стор на каждый запрос · Плагины
+- **10.13 Data fetching** — `/content/vuejs/data-fetching` · по стандарту
+  **Почему серверные данные особенные** · **Ручная загрузка** · **TanStack Query для Vue** · Ключ должен быть реактивным · Кеш и дедупликация · Мутации · Альтернативы · **Suspense и асинхронный setup** · Водопады · **Загрузка в Nuxt**
+- **10.14 Routing** — `/content/vuejs/routing` · по стандарту
+  **Как работает роутер** · Режимы истории · **Параметры и текущий маршрут** · Компонент переиспользуется · Вложенные маршруты · **Навигационные хуки** · Доступ к страницам · Уход со страницы · Результат перехода · **Ленивые маршруты** · **Адрес как состояние** · **Файловая маршрутизация и Nuxt**
+- **10.15 Performance** — `/content/vuejs/performance` · по стандарту
+  **Что Vue делает сам** · **Стабильность пропсов** · **v-once и v-memo** · v-once · v-memo · **Объём данных и DOM** · **Загрузка** · **Vapor mode** · **Профилирование**
+- **10.16 Security** — `/content/vuejs/security` · по стандарту
+  **Что Vue экранирует сам** · **v-html** · **Адреса в атрибутах** · **Атрибуты из чужого объекта** · **Пользовательский текст как шаблон** · CSP · **Секреты и клиентские проверки**
+- **10.17 Rendering and Nuxt** — `/content/vuejs/rendering-and-nuxt` · по стандарту
+  **Где создаётся HTML** · **SSR во Vue** · Стриминг · **Гидратация** · Расхождения · useId · Ленивая гидратация · **Nuxt** · Режимы рендеринга по маршрутам · Серверные компоненты · **Как выбрать**
+- **10.18 Testing Vue** — `/content/vuejs/testing-vue` · по стандарту
+  **Что проверять** · **Vue Test Utils** · Почему await · События · v-model · wrapper.vm · **Окружение компонента** · Плагины и провайдеры · Заглушки · Teleport · **Асинхронность и запросы** · **Testing Library для Vue** · **Композаблы** · **Что ещё**
 
 ## 11. Advanced Tooling
 

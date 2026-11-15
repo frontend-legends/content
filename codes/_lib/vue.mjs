@@ -7,7 +7,7 @@
 // flush()            — дожидается планировщика Vue (nextTick) и микрозадач;
 // warnings           — массив предупреждений Vue ([Vue warn]) за время проверки.
 import { JSDOM } from 'jsdom';
-import { mkdirSync, writeFileSync } from 'node:fs';
+import { mkdirSync, writeFileSync, unlinkSync } from 'node:fs';
 import { join } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { createHash } from 'node:crypto';
@@ -40,6 +40,8 @@ const cacheDir = fileURLToPath(new URL('./.sfc-cache/', import.meta.url));
 mkdirSync(cacheDir, { recursive: true });
 
 let counter = 0;
+const written = [];
+process.on('exit', () => { for (const f of written) { try { unlinkSync(f); } catch {} } });
 // opts.dev = true — как в dev-сервере Vite: шаблон отдельно от setup (inlineTemplate: false),
 // setup возвращает привязки, и они доступны снаружи, например через wrapper.vm в тестах
 export async function sfc(source, filename = `Comp${++counter}.vue`, opts = {}) {
@@ -65,8 +67,10 @@ export async function sfc(source, filename = `Comp${++counter}.vue`, opts = {}) 
   }
   const lang = descriptor.scriptSetup?.lang ?? descriptor.script?.lang;
   if (lang === 'ts') code = transformSync(code, { loader: 'ts', format: 'esm' }).code;
-  const file = join(cacheDir, `${filename.replace(/\W/g, '_')}-${id}.mjs`);
+  // pid в имени: параллельные прогоны не читают недописанный файл друг друга
+  const file = join(cacheDir, `${filename.replace(/\W/g, '_')}-${id}-${process.pid}.mjs`);
   writeFileSync(file, code);
+  written.push(file);
   const mod = await import(pathToFileURL(file).href);
   const comp = mod.default;
   // scoped-стили: сборщик (плагин Vite) выставляет компоненту __scopeId, здесь — то же самое
