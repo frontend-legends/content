@@ -469,34 +469,34 @@
 
 ## 17. Security and Performance
 
-- **17.01 Security fundamentals** — `/content/security-perfomance/security-fundamentals`
-  **Образ мышления** · **Модель угроз** · **Поверхность атаки фронтенда** · **Триада CIA** · **Принцип наименьших привилегий** · **Никогда не доверяй клиенту - на практике** · **OWASP** · **Secure by default** · **Вопросы на собеседовании**
-- **17.02 XSS** — `/content/security-perfomance/xss`
-  **Чем опасен** · **Три типа XSS** · Stored (хранимый) · Reflected (отражённый) · DOM-based · **Защита: экранирование** · **Фреймворки экранируют по умолчанию** · **Санитизация** · **Опасные «sinks»** · **URL-инъекции** · **Слои защиты** · **Контексты экранирования** · **Mutation XSS** · **Где ещё прячется XSS** · **Вопросы на собеседовании**
-- **17.03 CSRF** — `/content/security-perfomance/csrf`
-  **Как работает** · **Защита** · SameSite-куки · CSRF-токены · Double-submit cookie · Кастомные заголовки · Проверка Origin/Referer · **XSS vs CSRF** · **Связь с хранением токена** · **Вопросы на собеседовании**
-- **17.04 CORS and same-origin** — `/content/security-perfomance/cors-and-same-origin`
-  **Same-Origin Policy** · **Что SOP разрешает и запрещает** · **CORS** · **Как работает CORS** · Простые запросы · Preflight · Credentials · **CORS - это не серверная защита** · **Частые мисконфиги** · **Site vs origin** · **Cross-origin isolation (COOP/COEP/CORP)** · **Opaque-ответы** · **Вопросы на собеседовании**
-- **17.05 Authentication and tokens** — `/content/security-perfomance/authentication-and-tokens`
-  **Authentication vs authorization** · **Сессии vs токены** · Сессии (stateful) · Токены (stateless, JWT) · Компромиссы · **JWT под капотом** · **Где хранить токен** · **Access + refresh токены** · **OAuth 2.0 и OIDC** · **MFA и passkeys** · **Безопасность сессии** · **Вопросы на собеседовании**
-- **17.06 CSP and security headers** — `/content/security-perfomance/csp-and-security-headers`
-  **Content-Security-Policy** · **Inline-скрипты: nonce и hash** · **Report-only режим** · **Другие заголовки безопасности** · HSTS · X-Content-Type-Options · **Чья это зона** · **Вопросы на собеседовании**
-- **17.07 Supply chain and vulnerabilities** — `/content/security-perfomance/supply-chain-and-vulnerabilities`
-  **Supply chain** · Защита · **Секреты на клиенте** · **Clickjacking** · **Prototype pollution** · **Прочие классы** · **Безопасность - это процесс** · **Вопросы на собеседовании**
-- **17.08 Performance fundamentals** — `/content/security-perfomance/performance-fundamentals`
-  **Зачем это важно** · **Восприятие важнее цифр** · **Сначала измерь** · **Что происходит при загрузке** · **Три рычага** · **Модель RAIL** · **Perf budget** · **Не переусердствуй** · **Вопросы на собеседовании**
-- **17.09 Core Web Vitals** — `/content/security-perfomance/core-web-vitals`
-  **Три Core Web Vitals** · **LCP - Largest Contentful Paint** · **CLS - Cumulative Layout Shift** · **INP - Interaction to Next Paint** · **Сопутствующие метрики** · **Lab vs Field** · **Как измеряют** · **Вопросы на собеседовании**
-- **17.10 Loading performance** — `/content/security-perfomance/loading-performance`
-  **Критический путь рендеринга** · **Блокирующие ресурсы** · Critical CSS · **Resource hints** · **Грузить меньше и позже** · **Сжатие** · **HTTP/2 и HTTP/3** · **Серверный рендеринг** · **Back/forward cache (bfcache)** · **Early Hints и Speculation Rules** · **Вопросы на собеседовании**
-- **17.11 Runtime performance** — `/content/security-perfomance/runtime-performance`
-  **Главный поток** · **Бюджет кадра: 16мс** · **Длинные задачи** · **Конвейер рендеринга** · Анимируй transform и opacity · Layout thrashing · **Debounce и throttle** · **Виртуализация** · **Web Workers** · **Меньше лишней работы** · **content-visibility и will-change** · **Память** · **Вопросы на собеседовании**
-- **17.12 Asset optimization** — `/content/security-perfomance/asset-optimization`
-  **Изображения** · Современные форматы · Адаптивные изображения · Прочее · **Шрифты** · **JS и CSS** · **Видео** · **Где самый большой выигрыш** · **Вопросы на собеседовании**
-- **17.13 Caching strategies** — `/content/security-perfomance/caching-strategies`
-  **Слои кеширования** · **HTTP-кеш браузера** · **CDN и edge** · **Service Worker** · **Prefetching** · **Инвалидация** · **Кеш данных приложения** · **Вопросы на собеседовании**
-- **17.14 Measuring and monitoring** — `/content/security-perfomance/measuring-and-monitoring`
-  **Лабораторные инструменты** · **Lab vs field - снова** · **Полевые данные (RUM)** · **Бюджеты производительности в CI** · **Мониторинг в проде** · **Рабочий цикл** · **Связь обеих половин** · **Вопросы на собеседовании**
+- **17.01 Security fundamentals** — `/content/security-perfomance/security-fundamentals` · по стандарту
+  **Образ мышления** · **Модель угроз** · Триада CIA · **Поверхность атаки фронтенда** · **Не доверяй клиенту — на практике** · Скрытая кнопка · Чужой объект по id · Лишнее поле в форме · Цена из браузера · **Наименьшие привилегии** · **Ошибки без внутренностей** · **OWASP Top 10** · **Безопасность по умолчанию**
+- **17.02 XSS** — `/content/security-perfomance/xss` · по стандарту
+  **Что это и чем опасно** · **Три вида** · **Экранирование зависит от контекста** · **Фреймворки экранируют по умолчанию** · **Санитизация сырого HTML** · **Опасные точки и ссылки** · **Серверный рендеринг состояния** · **Слои защиты**
+- **17.03 CSRF** — `/content/security-perfomance/csrf` · по стандарту
+  **Как работает** · **SameSite-куки** · **CSRF-токены** · Синхронизирующий токен · Double-submit cookie · **Другие слои** · **XSS и CSRF — не путать** · **Связь с хранением токена**
+- **17.04 CORS and same-origin** — `/content/security-perfomance/cors-and-same-origin` · по стандарту
+  **Same-Origin Policy** · Что SOP разрешает и запрещает · **CORS** · Preflight · Credentials · **CORS не защищает сервер** · Частые ошибки настройки · **Origin против site** · **Cross-origin isolation**
+- **17.05 Authentication and tokens** — `/content/security-perfomance/authentication-and-tokens` · по стандарту
+  **Аутентификация и авторизация** · **Сессии против токенов** · **Устройство и проверка JWT** · Подписан, но не зашифрован · **Где хранить токен** · **Access и refresh** · **OAuth и PKCE** · **Passkeys и безопасность сессии**
+- **17.06 CSP and security headers** — `/content/security-perfomance/csp-and-security-headers` · по стандарту
+  **Content-Security-Policy** · **Встроенные скрипты: nonce и hash** · Чего избегать · **Режим наблюдения** · **Остальные заголовки** · **Чья это зона**
+- **17.07 Supply chain and vulnerabilities** — `/content/security-perfomance/supply-chain-and-vulnerabilities` · по стандарту
+  **Цепочка поставок** · Защита · Subresource Integrity · **Секреты в бандле** · **Классы атак и защита** · Clickjacking · Prototype pollution · Остальные · **Безопасность — это процесс**
+- **17.08 Performance fundamentals** — `/content/security-perfomance/performance-fundamentals` · по стандарту
+  **Зачем это важно** · **Сначала измерь** · Что происходит при загрузке · **Три рычага** · Меньше работы · Кеш · Позже или не в главном потоке · **Восприятие важнее секундомера** · **Модель RAIL** · **Бюджет производительности** · **Не переусердствуй**
+- **17.09 Core Web Vitals** — `/content/security-perfomance/core-web-vitals` · по стандарту
+  **Три метрики** · **CLS — стабильность макета** · Сдвиг после действия не считается · **LCP — скорость загрузки** · **INP — отзывчивость** · **Лаборатория и поле** · Почему 75-й перцентиль, а не среднее · **Как измеряют**
+- **17.10 Loading performance** — `/content/security-perfomance/loading-performance` · по стандарту
+  **Критический путь отрисовки** · **Блокирующие ресурсы** · async или defer · Критический CSS · **Меньше, позже, сжатее** · **Подсказки браузеру** · **Протоколы** · **Готовый HTML и мгновенные переходы**
+- **17.11 Runtime performance** — `/content/security-perfomance/runtime-performance` · по стандарту
+  **Главный поток** · **Бюджет кадра** · **Конвейер отрисовки** · Анимируют transform и opacity · Layout thrashing · **Меньше и реже** · Debounce и throttle · Виртуализация · Воркеры · content-visibility · **Память**
+- **17.12 Asset optimization** — `/content/security-perfomance/asset-optimization` · по стандарту
+  **Изображения** · Формат · Размер · Остальное · **Шрифты** · FOIT и FOUT · **JavaScript и CSS** · **Видео** · **С чего начинать**
+- **17.13 Caching strategies** — `/content/security-perfomance/caching-strategies` · по стандарту
+  **Слои кеширования** · **HTTP-кеш браузера** · Паттерн для ассетов и HTML · **Service Worker** · **Предзагрузка** · **Инвалидация** · **Кеш состояния приложения**
+- **17.14 Measuring and monitoring** — `/content/security-perfomance/measuring-and-monitoring` · по стандарту
+  **Лабораторные инструменты** · **Поле против лаборатории** · **Полевые данные (RUM)** · **Бюджеты и алерты** · Бюджет в CI · Алерт на регрессию · **Мониторинг в проде** · **Рабочий цикл** · **Две половины главы**
 
 ## 18. Preparing for interviews
 
