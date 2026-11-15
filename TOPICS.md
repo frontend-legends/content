@@ -340,38 +340,38 @@
 
 ## 12. Ecosystem libs
 
-- **12.01 Introduction** — `/content/ecosystem-libs/introduction`
-  **Build vs buy** · **Критерии выбора библиотеки** · **Размер бандла и tree-shaking** · **Красные флаги** · **ESM vs CommonJS** · **Усталость от экосистемы** · **Наблюдаемость - в двух словах** · **Вопросы на собеседовании**
-- **12.02 Package management** — `/content/ecosystem-libs/package-management`
-  **Менеджеры пакетов** · **package.json - ключевые поля** · Типы зависимостей · **Semver** · **Lockfile** · **npx и dlx** · **npm-скрипты и жизненный цикл** · **Разрешение модулей** · **Безопасность зависимостей** · **Workspaces и монорепы** · **Вопросы на собеседовании**
-- **12.03 UI component libraries** — `/content/ecosystem-libs/ui-component-libraries`
-  **Три подхода** · **Styled - «всё в комплекте»** · **Headless - логика без стилей** · Узкоспециализированные примитивы · **Copy-paste - ты владеешь кодом** · **Дизайн-системы** · **Стоимость, бандл и RSC** · **Когда UI-библиотека не нужна** · **Как выбрать** · **Vue-эквиваленты** · **Вопросы на собеседовании**
-- **12.04 Styling solutions** — `/content/ecosystem-libs/styling-solutions`
-  **Категории** · **Обычный CSS и Sass** · **CSS Modules** · **Utility-first: Tailwind** · **CSS-in-JS: runtime** · **CSS-in-JS: zero-runtime** · **Сдвиг из-за RSC** · **Как выбрать** · **Вопросы на собеседовании**
-- **12.05 Forms and validation** — `/content/ecosystem-libs/forms-and-validation`
-  **Зачем библиотека для форм** · **react-hook-form** · **Formik и другие** · Vue · **Схемная валидация** · Zod · Остальные · **Валидация на клиенте и на сервере** · **Как выбрать** · **Вопросы на собеседовании**
-- **12.06 State and data libraries** — `/content/ecosystem-libs/state-and-data-libraries`
-  **Главное различие: client vs server state** · **Менеджеры client-state** · Сторы · Атомарные · Proxy / реактивные · State machines · **Библиотеки server-state** · GraphQL-клиенты · **Нормализованный vs документный кэш** · **Как выбрать** · **Вопросы на собеседовании**
-- **12.07 Meta-frameworks** — `/content/ecosystem-libs/meta-frameworks`
-  **Зачем они нужны** · **Next.js** · **Remix / React Router 7** · **Astro** · **Другие** · **Сравнение** · **Как выбрать** · **Вопросы на собеседовании**
-- **12.08 Utility libraries** — `/content/ecosystem-libs/utility-libraries`
-  **Сначала - нативный JS** · **Общие утилиты** · **Даты** · **Иммутабельность** · **HTTP-клиенты** · **ID, классы и прочее** · **Как мыслить про утилиты** · **Вопросы на собеседовании**
-- **12.09 Animation** — `/content/ecosystem-libs/animation`
-  **CSS или библиотека?** · **Motion (ex-Framer Motion)** · **GSAP** · **react-spring и другие** · **Vue и нативное** · **Как выбрать** · **Вопросы на собеседовании**
-- **12.10 Data visualization** — `/content/ecosystem-libs/data-visualization`
-  **Спектр абстракции** · **D3.js** · **Готовые графики** · **visx** · **SVG vs Canvas** · **3D и WebGL** · **Как выбрать** · **Вопросы на собеседовании**
-- **12.11 Tables and grids** — `/content/ecosystem-libs/tables-and-grids`
-  **Почему таблицы сложные** · **Headless vs полный грид** · **TanStack Table** · **AG Grid** · **Виртуализация** · **Клиентская vs серверная обработка** · **Как выбрать** · **Вопросы на собеседовании**
-- **12.12 i18n** — `/content/ecosystem-libs/i18n`
-  **Что входит в i18n** · **Нативный Intl** · **Плюрализация - почему это сложно** · **ICU MessageFormat** · **Библиотеки** · **Организация переводов** · **RTL** · **Как выбрать** · **Вопросы на собеседовании**
-- **12.13 Realtime and API clients** — `/content/ecosystem-libs/realtime-and-api-clients`
-  **Три парадигмы API** · **REST-клиенты** · **GraphQL-клиенты** · **tRPC** · **Реалтайм-транспорты** · WebSocket и Socket.io · SSE · Hosted-решения · **Как выбрать** · **Вопросы на собеседовании**
-- **12.14 Rich content** — `/content/ecosystem-libs/rich-content-and-interactions`
-  **Редакторы форматированного текста** · **Markdown** · **Подсветка синтаксиса** · **Drag and drop** · **Загрузка файлов** · **Как выбрать** · **Вопросы на собеседовании**
-- **12.15 Auth libraries** — `/content/ecosystem-libs/auth-libraries`
-  **Два подхода: библиотека vs сервис** · **Библиотеки (self-hosted)** · **Сервисы и BaaS (managed)** · **Роль фронтенда** · **Как выбрать** · **Вопросы на собеседовании**
-- **12.16 Build and patch** — `/content/ecosystem-libs/building-and-patching`
-  **Это всё JavaScript** · **Патчинг чужих зависимостей** · patch-package / pnpm patch · Форк · Контрибьютить обратно · **Своя библиотека** · package.json библиотеки · Сборка · Публикация · **Framework-agnostic ядро + адаптеры** · **Главная мысль** · **Вопросы на собеседовании**
+- **12.01 Introduction** — `/content/ecosystem-libs/introduction` · по стандарту
+  **Писать самому или брать готовое** · **Сначала — платформа** · **Сколько стоит зависимость** · Размер в бандле · Транзитивные зависимости · **Критерии выбора** · Красные флаги · **Как жить с меняющейся экосистемой**
+- **12.02 Package management** — `/content/ecosystem-libs/package-management` · по стандарту
+  **Менеджеры пакетов** · **package.json и типы зависимостей** · Типы зависимостей · peerDependencies · **Semver** · **Lock-файл** · **Скрипты** · Скрипты при установке · Ещё о безопасности
+- **12.03 UI component libraries** — `/content/ecosystem-libs/ui-component-libraries` · по стандарту
+  **Что сложного в компоненте** · **Три подхода** · Библиотеки со стилями · Headless-библиотеки · Копирование кода · **Дизайн-система** · **Когда библиотека не нужна** · **Как выбрать**
+- **12.04 Styling solutions** — `/content/ecosystem-libs/styling-solutions` · по стандарту
+  **Варианты** · **Современный CSS как основа** · **CSS Modules** · **Tailwind** · Главная ловушка · Цена · **CSS-in-JS** · Во время выполнения · При сборке · **Серверные компоненты и SSR** · **Как выбрать**
+- **12.05 Forms and validation** — `/content/ecosystem-libs/forms-and-validation` · по стандарту
+  **Зачем библиотека** · **Контролируемая форма и её цена** · **Библиотеки форм** · react-hook-form · Другие · Actions в React 19 · **Схемы валидации** · Библиотеки · Standard Schema · **Клиент и сервер** · Нативная валидация · **Как выбрать**
+- **12.06 State and data libraries** — `/content/ecosystem-libs/state-and-data-libraries` · по стандарту
+  **Какое это состояние** · **Клиентское состояние** · Сторы с действиями · Атомы · Прокси · Сигналы · Автоматы состояний · **Серверное состояние** · **Нормализованный и документный кеш** · Нормализованный · Документный · **Как выбрать**
+- **12.07 Meta-frameworks** — `/content/ecosystem-libs/meta-frameworks` · по стандарту
+  **Что добавляет мета-фреймворк** · **Как фреймворк решает, как отдавать страницу** · Серверный код остаётся на сервере · **Острова: Astro** · **Ландшафт** · **Как выбрать**
+- **12.08 Utility libraries** — `/content/ecosystem-libs/utility-libraries` · по стандарту
+  **Сначала — язык** · **Глубокая копия** · **Неизменяемые обновления** · **Даты** · **HTTP-клиенты** · **Мелочи**
+- **12.09 Animation** — `/content/ecosystem-libs/animation` · по стандарту
+  **Сначала — CSS** · Что делает анимацию плавной · **Web Animations API** · **Библиотеки** · Motion · GSAP · Размер · Остальное · **View Transitions** · **Уважение к пользователю** · **Как выбрать**
+- **12.10 Data visualization** — `/content/ecosystem-libs/data-visualization` · по стандарту
+  **Уровни абстракции** · **D3 — это математика** · Размер · **SVG, Canvas и WebGL** · **Доступность графиков** · **Как выбрать**
+- **12.11 Tables and grids** — `/content/ecosystem-libs/tables-and-grids` · по стандарту
+  **Почему таблицы сложные** · **Headless и полный грид** · Headless: TanStack Table · Полные гриды · **Виртуализация** · Что ломает виртуализация · **На клиенте или на сервере** · **Как выбрать**
+- **12.12 i18n** — `/content/ecosystem-libs/i18n` · по стандарту
+  **Что входит в i18n** · **Intl и библиотеки** · **ICU MessageFormat** · Почему не склеивать фразы · **Библиотеки** · i18next · FormatJS и Lingui · vue-i18n · Размер · **Организация переводов** · Ключи и файлы · Ленивая загрузка · Выбор языка · **Серверный рендер** · **Справа налево** · **Как выбрать**
+- **12.13 Realtime and API clients** — `/content/ecosystem-libs/realtime-and-api-clients` · по стандарту
+  **Три стиля API** · **REST с типами: OpenAPI** · Генерация типов · Клиент по типам · **GraphQL-клиенты** · Ошибки приходят в теле · **tRPC** · **Реалтайм-библиотеки** · Socket.io · SSE и потоковые ответы · Готовые сервисы · **Как выбрать**
+- **12.14 Rich content** — `/content/ecosystem-libs/rich-content-and-interactions` · по стандарту
+  **Редакторы форматированного текста** · Почему не `contenteditable` · ProseMirror и TipTap · Другие редакторы · **Markdown** · Парсеры и XSS · MDX · **Подсветка кода** · **Перетаскивание** · Что не так с нативным API · dnd-kit и другие · **Загрузка файлов** · Что важно знать · **Как выбрать**
+- **12.15 Auth libraries** — `/content/ecosystem-libs/auth-libraries` · по стандарту
+  **Почему не писать самому** · **Библиотека или сервис** · **Библиотеки** · Better Auth · Auth.js · Passport и Lucia · **Сервисы** · **Что остаётся фронтенду** · Декодировать — не значит проверить · OAuth в SPA: PKCE · Обновление токена · Защита маршрутов · **Как выбрать**
+- **12.16 Build and patch** — `/content/ecosystem-libs/building-and-patching` · по стандарту
+  **Это всё JavaScript** · **Патч зависимости** · pnpm patch · patch-package · Патч — временная мера · Форк · **Своя библиотека** · package.json библиотеки · Сборка · Проверить пакет перед публикацией · Публикация · **Ядро и адаптеры**
 
 ## 13. Testing and Deploying
 
