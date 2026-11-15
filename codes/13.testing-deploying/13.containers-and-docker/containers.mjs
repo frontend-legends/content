@@ -104,7 +104,7 @@ write(dir, 'src/main.js', "document.getElementById('app').textContent = 'Маг�
 const codeChange = build('fl-shop-web:test');
 assert.match(codeChange, /RUN npm ci\n#\d+ CACHED/);
 const pkg = JSON.parse(run('cat', ['package.json'], { cwd: dir }).stdout);
-pkg.description = 'магазин';
+pkg.description = `магазин ${process.pid}-${Date.now()}`; // кеш BuildKit живёт между прогонами — значение каждый раз новое
 write(dir, 'package.json', JSON.stringify(pkg, null, 2));
 const depsChange = build('fl-shop-web:test');
 assert.doesNotMatch(depsChange, /RUN npm ci\n#\d+ CACHED/);

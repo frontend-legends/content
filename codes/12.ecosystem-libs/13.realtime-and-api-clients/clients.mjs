@@ -179,7 +179,7 @@ const io = new SocketServer(sioHttp);
 const received = [];
 io.on('connection', (socket) => {
   socket.on('chat', (message) => received.push(message));
-  socket.on('join', (room) => socket.join(room));
+  socket.on('join', (room, ack) => { socket.join(room); ack?.(); });
   socket.emit('welcome', 'hi');
 });
 const sioPort = await listen(sioHttp);
@@ -223,11 +223,11 @@ assert.deepEqual(received, ['отправлено без связи']);
 const other = socketClient(`http://localhost:${sioPort}`);
 await new Promise((resolve) => other.on('connect', resolve));
 const inRoom = [], outside = [];
-client.on('order', (m) => inRoom.push(m));
 other.on('order', (m) => outside.push(m));
-client.emit('join', 'order:42');
-await wait(50);
+const delivered = new Promise((resolve) => client.on('order', (m) => { inRoom.push(m); resolve(); }));
+await client.emitWithAck('join', 'order:42'); // подтверждение: сервер уже добавил клиента в комнату
 io.to('order:42').emit('order', 'оплачен');
+await delivered;
 await wait(50);
 assert.deepEqual(inRoom, ['оплачен']);
 assert.deepEqual(outside, []);
