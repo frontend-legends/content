@@ -375,34 +375,34 @@
 
 ## 13. Testing and Deploying
 
-- **13.01 Introduction** — `/content/testing-deploying/introduction`
-  **Зачем тестировать** · **Уверенность vs стоимость** · **Зачем надёжный деплой** · **Цикл «от коммита до прода»** · **Shift left** · **Вопросы на собеседовании**
-- **13.02 Testing strategy** — `/content/testing-deploying/testing-strategy-and-pyramid`
-  **Виды тестов** · **Пирамида тестирования** · **Тестовый трофей** · **Что тестировать** · **Что НЕ тестировать** · **Структура теста** · **Smoke и regression тесты** · **Вопросы на собеседовании**
-- **13.03 Test runners** — `/content/testing-deploying/test-runners`
-  **Что делает раннер** · **Анатомия теста** · **Vitest vs Jest** · **DOM-окружение** · **Покрытие** · **Watch и фильтрация** · **Другие раннеры** · **Вопросы на собеседовании**
-- **13.04 Unit and integration** — `/content/testing-deploying/unit-and-integration-testing`
-  **Unit vs integration** · **Философия Testing Library** · **Хороший тест vs хрупкий** · **Принципы FIRST** · **Изоляция** · **Асинхронность** · **Детерминированность** · **Вопросы на собеседовании**
-- **13.05 Mocking and test doubles** — `/content/testing-deploying/mocking-and-test-doubles`
-  **Зачем подменять зависимости** · **Таксономия дублёров** · **Инструменты** · vi.fn() / jest.fn() - mock-функция · vi.spyOn() - шпион на существующем методе · vi.mock() - мок модуля · **MSW для сети** · **Фейковое время** · **Главный принцип: не перемокать** · **Вопросы на собеседовании**
-- **13.06 E2E testing** — `/content/testing-deploying/e2e-testing`
-  **Что такое e2e** · **Playwright vs Cypress** · **Селекторы** · **Flaky-тесты** · **Поддерживаемость e2e** · **Что покрывать e2e** · **Подготовка и скорость** · **Вопросы на собеседовании**
-- **13.07 Visual and component** — `/content/testing-deploying/visual-and-component-testing`
-  **Пробел функциональных тестов** · **Визуальная регрессия** · **Storybook** · **Компонентное тестирование** · **Snapshot-тестирование** · **Доступность** · **Что когда использовать** · **Вопросы на собеседовании**
-- **13.08 Coverage and TDD** — `/content/testing-deploying/coverage-and-tdd`
-  **Метрики покрытия** · **Пределы покрытия** · **Мутационное тестирование** · **TDD** · **BDD** · **Что отвечать про «сколько покрытия»** · **Вопросы на собеседовании**
-- **13.09 Environments and config** — `/content/testing-deploying/environments-and-config`
-  **Окружения** · **Что различается между окружениями** · **Переменные окружения** · **Build-time vs runtime config** · **Секреты** · **Вопросы на собеседовании**
-- **13.10 Hosting and platforms** — `/content/testing-deploying/hosting-and-platforms`
-  **Фундаментальное различие** · **Статический хостинг** · **Серверный хостинг** · **Serverless и edge** · **JAMstack и BaaS** · **Мета-фреймворки и платформы** · **Как выбрать** · **Вопросы на собеседовании**
-- **13.11 Deployment strategies** — `/content/testing-deploying/deployment-strategies`
-  **Проблема** · **Основные стратегии** · Rolling · Blue-green · Canary · **Feature flags** · **Обратная совместимость** · **Откат** · **Превью-деплои** · **Progressive delivery** · **Вопросы на собеседовании**
-- **13.12 CDN and caching** — `/content/testing-deploying/cdn-and-caching`
-  **CDN** · **Стратегия кеширования ассетов** · **Заголовки Cache-Control** · **Cache busting** · **Инвалидация CDN** · **Edge и динамика** · **Ассеты и изображения** · **Вопросы на собеседовании**
-- **13.13 Containers and Docker** — `/content/testing-deploying/containers-and-docker`
-  **Что такое контейнер** · **Основы Docker** · **Фронтенд в контейнере** · **nginx для SPA** · **Слои и кеш** · **Когда контейнеры нужны** · **Оркестрация** · **Вопросы на собеседовании**
-- **13.14 Monitoring** — `/content/testing-deploying/monitoring-and-observability`
-  **Зачем мониторинг** · **Трекинг ошибок** · **RUM - реальная производительность** · **Продуктовая аналитика** · **Логи, метрики, трейсы** · **Алерты и uptime** · **Замыкая круг** · **Вопросы на собеседовании**
+- **13.01 Introduction** — `/content/testing-deploying/introduction` · по стандарту
+  **От коммита до продакшена** · **Что ловит каждый слой** · **Уверенность и цена** · Тест на найденный баг · **Сдвиг влево** · **Надёжная выкладка**
+- **13.02 Testing strategy** — `/content/testing-deploying/testing-strategy-and-pyramid` · по стандарту
+  **Виды тестов** · **Пирамида и трофей** · Пирамида · Трофей · **Что тестировать** · **Что не тестировать** · Почему тест на реализацию вреден · **Структура теста** · Smoke- и регрессионные тесты
+- **13.03 Test runners** — `/content/testing-deploying/test-runners` · по стандарту
+  **Что делает раннер** · Анатомия теста · **Vitest и Jest** · Другие раннеры · **Окружения DOM** · **Изоляция** · **Фильтры и наблюдение** · Забытый `.only`
+- **13.04 Unit and integration testing** — `/content/testing-deploying/unit-and-integration-testing` · по стандарту
+  **Модульный и интеграционный** · **Как пользователь** · **FIRST** · Независимость · **Асинхронность** · **Детерминированность** · Часовой пояс и локаль · Время, случайность и сеть
+- **13.05 Mocking and test doubles** — `/content/testing-deploying/mocking-and-test-doubles` · по стандарту
+  **Зачем подменять** · **Виды дублёров** · **Инструменты Vitest** · vi.fn · vi.spyOn · vi.mock и подъём · clear, reset, restore · **Фейковое время** · **Сеть: MSW** · **Не перемокать**
+- **13.06 E2E testing** — `/content/testing-deploying/e2e-testing` · по стандарту
+  **Что такое e2e** · **Playwright и Cypress** · **Локаторы** · **Ожидание** · Действия ждут сами · Проверки с повторами · **Нестабильные тесты** · Повтор — не лечение · **Изоляция и подготовка** · Свой контекст на каждый тест · Вход один раз · Подмена сети · Page Object · Скорость
+- **13.07 Visual and component testing** — `/content/testing-deploying/visual-and-component-testing` · по стандарту
+  **Чего не видят функциональные тесты** · **Визуальная регрессия** · Почему скриншоты шумят · Инструменты · **Компоненты в настоящем браузере** · **Storybook** · **Снапшоты** · **Доступность** · **Что когда**
+- **13.08 Coverage and TDD** — `/content/testing-deploying/coverage-and-tdd` · по стандарту
+  **Метрики покрытия** · **Пределы покрытия** · Порог в CI · **Мутационное тестирование** · **TDD** · **BDD** · **Сколько покрытия нужно**
+- **13.09 Environments and config** — `/content/testing-deploying/environments-and-config` · по стандарту
+  **Окружения** · **Переменные окружения** · **При сборке или при запуске** · Конфигурация при сборке · Конфигурация при запуске · Собрать один раз · **Секреты** · Где хранить · Если секрет попал в git
+- **13.10 Hosting and platforms** — `/content/testing-deploying/hosting-and-platforms` · по стандарту
+  **Статика или сервер** · **Статический хостинг** · Резервная отдача для SPA · Ловушка: HTML вместо скрипта · Подпапка и base · **Сервер** · Serverless · Edge · **Мета-фреймворки и платформы** · **Как выбрать**
+- **13.11 Deployment strategies** — `/content/testing-deploying/deployment-strategies` · по стандарту
+  **Почему выкладка рискованна** · **Стратегии** · Поочерёдная · Blue-green · Canary · **Флаги функций** · Выкладка и релиз · **Две версии одновременно** · Expand–contract · Старые вкладки · **Откат** · **Превью**
+- **13.12 CDN and caching** — `/content/testing-deploying/cdn-and-caching` · по стандарту
+  **CDN** · **Хешированные ассеты и свежий HTML** · Заголовки · **Ошибки с кешем** · Долгий кеш у index.html · Удалённые чанки · **Сброс кеша CDN** · **Кеш ответов на edge** · Изображения
+- **13.13 Containers and Docker** — `/content/testing-deploying/containers-and-docker` · по стандарту
+  **Что такое контейнер** · **Основы Docker** · **Многоэтапная сборка** · **Кеш слоёв и контекст** · Порядок шагов · .dockerignore · **nginx для SPA** · **Один образ — разные окружения** · **Когда контейнеры нужны**
+- **13.14 Monitoring and observability** — `/content/testing-deploying/monitoring-and-observability` · по стандарту
+  **Зачем мониторинг** · **Трекинг ошибок** · Что перехватывается · Script error. · **Производительность в поле** · Не потерять событие · Что смотреть · **Логи, метрики, трейсы** · **Алерты и синтетика** · Алерты · Синтетические проверки · **Личные данные** · **Замыкая круг**
 
 ## 14. Additional Topics
 
