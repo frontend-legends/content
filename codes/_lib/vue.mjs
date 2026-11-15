@@ -22,6 +22,9 @@ for (const key of ['window', 'document', 'navigator', 'location', 'history', 'ge
   Object.defineProperty(globalThis, key, { value: key === 'window' ? dom.window : dom.window[key], configurable: true, writable: true });
 }
 
+// у jsdom нет performance.mark и measure — отдаём окну Performance API из Node.js, как в браузере
+Object.defineProperty(dom.window, 'performance', { value: globalThis.performance, configurable: true });
+
 const vue = await import('vue');
 const { parse, compileScript, compileTemplate } = await import('vue/compiler-sfc');
 
