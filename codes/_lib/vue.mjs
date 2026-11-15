@@ -13,12 +13,12 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 import { createHash } from 'node:crypto';
 import { transformSync } from 'esbuild';
 
-export const dom = new JSDOM('<!doctype html><html><body></body></html>', { pretendToBeVisual: true });
+export const dom = new JSDOM('<!doctype html><html><body></body></html>', { pretendToBeVisual: true, url: 'http://localhost/' });
 for (const key of Object.getOwnPropertyNames(dom.window)) {
   if (/^[A-Z]/.test(key) && !(key in globalThis)) Object.defineProperty(globalThis, key, { value: dom.window[key], configurable: true, writable: true });
 }
 // события и FormData — из jsdom, иначе dispatchEvent и формы не примут объекты Node.js
-for (const key of ['window', 'document', 'navigator', 'location', 'history', 'getComputedStyle', 'requestAnimationFrame', 'cancelAnimationFrame', 'Event', 'CustomEvent', 'FormData']) {
+for (const key of ['window', 'document', 'navigator', 'location', 'history', 'getComputedStyle', 'requestAnimationFrame', 'cancelAnimationFrame', 'Event', 'CustomEvent', 'FormData', 'localStorage', 'sessionStorage']) {
   Object.defineProperty(globalThis, key, { value: key === 'window' ? dom.window : dom.window[key], configurable: true, writable: true });
 }
 
