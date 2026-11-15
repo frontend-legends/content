@@ -1,5 +1,6 @@
 // Общая обвязка для Vue-проверок: jsdom + компиляция настоящих SFC (`<script setup>`, макросы, шаблон) + монтирование.
 // Подключение: import { sfc, mount, flush, warnings, dom } from '../../_lib/vue.mjs';
+// Импортируй этот модуль раньше 'vue': runtime-dom запоминает document при загрузке.
 //
 // sfc(source)        — компилирует строку .vue (lang="ts" тоже) через vue/compiler-sfc и возвращает компонент;
 // mount(comp, opts)  — монтирует в jsdom: { app, container, html(), unmount() }; opts.props, opts.plugins, opts.provide;
