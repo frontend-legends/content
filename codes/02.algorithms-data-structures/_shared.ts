@@ -39,9 +39,10 @@ export function toTree(values: (number | null)[]): TreeNode | null {
   if (!values.length || values[0] === null) return null;
   const root = new TreeNode(values[0]);
   const queue = [root];
+  let head = 0;                                   // указатель вместо shift — O(1)
   let i = 1;
-  while (queue.length && i < values.length) {
-    const node = queue.shift()!;
+  while (head < queue.length && i < values.length) {
+    const node = queue[head++];
     const l = values[i++];
     if (l !== null && l !== undefined) { node.left = new TreeNode(l); queue.push(node.left); }
     const r = values[i++];
@@ -53,8 +54,8 @@ export function toTree(values: (number | null)[]): TreeNode | null {
 export function fromTree(root: TreeNode | null): (number | null)[] {
   const out: (number | null)[] = [];
   const queue: (TreeNode | null)[] = [root];
-  while (queue.length) {
-    const node = queue.shift()!;
+  for (let head = 0; head < queue.length; head++) {
+    const node = queue[head];
     out.push(node ? node.val : null);
     if (node) queue.push(node.left, node.right);
   }
