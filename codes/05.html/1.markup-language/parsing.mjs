@@ -22,6 +22,12 @@ await withPage(async (page) => {
   assert.equal(await parse('<form id="a"><form id="b"><input name="q"></form></form>'), '<form id="a"><input name="q"></form>');
   // а кнопку внутри ссылки парсер не трогает: DOM как в исходнике, ошибка остаётся
   assert.equal(await parse('<a href="/tea"><button>Купить</button></a>'), '<a href="/tea"><button>Купить</button></a>');
+  // кнопка в ссылке — две остановки Tab на одном месте
+  await page.setContent('<!doctype html><a id="l" href="/tea"><button id="b">Купить</button></a>');
+  await page.keyboard.press('Tab');
+  const first = await page.evaluate(() => document.activeElement.id);
+  await page.keyboard.press('Tab');
+  assert.deepEqual([first, await page.evaluate(() => document.activeElement.id)], ['l', 'b']);
   // и div внутри ul тоже не трогает — только валидатор скажет, что так нельзя
   assert.equal(await parse('<ul><div><li>улун</li></div></ul>'), '<ul><div><li>улун</li></div></ul>');
 
@@ -102,6 +108,7 @@ await withPage(async (page) => {
   // --- «самозакрывающийся» div в HTML не закрывается: слеш игнорируется ---
   assert.equal(await parse('<div/>Улун<span/>990 ₽'), '<div>Улун<span>990 ₽</span></div>');
   assert.equal(await parse('<br/><img src="x.png"/>'), '<br><img src="x.png">'); // у пустых элементов слеш просто лишний
+  assert.equal(await parse('<svg><circle r="1"/><rect/></svg>'), '<svg><circle r="1"></circle><rect></rect></svg>'); // в SVG самозакрытие работает
   // а в XML-документе — закрывается, и ошибка разметки ломает разбор целиком
   const xml = await page.evaluate(() => {
     const ok = new DOMParser().parseFromString('<html xmlns="http://www.w3.org/1999/xhtml"><body><div/>Улун</body></html>', 'application/xhtml+xml');
