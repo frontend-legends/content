@@ -116,10 +116,10 @@ try {
     const copy = res.clone();
     const a = await res.json();
     let second;
-    try { await res.json(); } catch (e) { second = e.name; }
+    try { await res.json(); } catch (e) { second = `${e.name}: ${e.message}`; }
     return { a: a.items, second, used: res.bodyUsed, copy: (await copy.json()).items };
   });
-  assert.deepEqual(once, { a: 2, second: 'TypeError', used: true, copy: 2 });
+  assert.deepEqual(once, { a: 2, second: "TypeError: Failed to execute 'json' on 'Response': body stream already read", used: true, copy: 2 });
 
   // --- общение вкладок одного origin: BroadcastChannel и событие storage ---
   const other = await context.newPage();
