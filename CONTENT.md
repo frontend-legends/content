@@ -82,6 +82,23 @@ grep -rli "event loop" --include="*.md" .
 - **Можно — коротко и со ссылкой.** Два-три предложения: что это и почему важно здесь, плюс ссылка туда, где разобрано подробно. Как в 7.01: «Event loop — тоже не часть языка: в ECMAScript есть только задачи (jobs) и точки, через которые окружение ставит их в очередь. Сам цикл описан в HTML-спецификации (браузер) и в libuv (Node.js). Подробно — в [Event Loop](/content/javascript/event-loop).»
 - **Нельзя — второй полный разбор:** те же примеры, те же таблицы, тот же порядок объяснения. Если тема разобрана в двух местах, она остаётся в той главе, которой ближе по смыслу, а во второй — короткий контекст и ссылка.
 
+### Дома понятий Web (глава 3)
+
+Глава 3 — платформа глазами браузера. Что значат метрики и как их улучшать — 17.09–17.12, стратегии кеширования — 17.13, отладка source maps и Node — 11.12, утечки памяти и Performance API — 7.15, Event Loop — 7.08, Baseline и прогрессивное улучшение — 15.08, анимации View Transitions — 12.09 и 6.05.
+
+| Понятие | Где разобрано подробно |
+| --- | --- |
+| интернет и веб, устройство и нормализация URL, относительные адреса, фрагмент, `URLSearchParams`, origin и site, кто делает стандарты и путь функции до Baseline, безопасный контекст | 3.01 What is web (Baseline — 15.08) |
+| процессы браузера, изоляция сайтов, OOPIF, `document.domain`, что внутри рендерера, движки, User-Agent и Client Hints | 3.02 Browser engines (внутренности V8 — 7.01, сборщик мусора — 7.15) |
+| конвейер кадра, что запускает стили, раскладку и отрисовку, принудительная синхронная раскладка, layout thrashing, слои, `will-change`, композиция | 3.03 Rendering (бюджет кадра и оптимизация — 17.11) |
+| живые и статичные коллекции, `innerHTML +=`, `DocumentFragment`, фазы события, `stopPropagation` и `preventDefault`, параметры слушателя, passive, делегирование, `CustomEvent`, `isTrusted` | 3.04 DOM & Events (микрозадачи между слушателями — 7.08, `AbortController` — 7.09, задачи на делегирование — 19.09) |
+| `IntersectionObserver`, `ResizeObserver` и ошибка цикла, `MutationObserver`, потоки и `TransformStream`, тело ответа читается один раз, `BroadcastChannel` и событие `storage`, `scheduler.postTask`, `requestIdleCallback`, Permissions API | 3.05 Browser APIs (хранилища — 4.10, воркеры — 14.01) |
+| Performance Timeline и `buffered`, кандидаты LCP и его части, окна сессий CLS, Event Timing и фазы INP, `long-animation-frame`, Navigation и Resource Timing, `Server-Timing`, `Timing-Allow-Origin` | 3.06 Core web vitals (что значат метрики и пороги — 17.09, RUM и бюджеты — 17.14) |
+| как робот обрабатывает страницу, ссылки и адреса для робота, пагинация, коды ответа и мягкая 404, `canonical` и дубли, `robots.txt` и `noindex`, JSON-LD и его экранирование, Open Graph как превью, sitemap, правила `hreflang` | 3.07 SEO (метатеги как теги — 5.03, SSR — 9.17 и 10.17) |
+| DevTools как клиент CDP, консоль и её утилиты, виды точек останова, водопад и изменение сети, Performance и принудительная раскладка, Rendering, Coverage | 3.08 DevTools (source maps — 11.12, снимки кучи — 7.15, Lighthouse — 17.14) |
+| состав PWA и установка, жизненный цикл Service Worker, контроль страницы и `clients.claim`, scope, обновление и `skipWaiting`, `respondWith`, атомарный `addAll`, офлайн, navigation preload, манифест, push | 3.09 PWA (стратегии кеширования — 17.13, PWA против нативного — 14.05) |
+| Navigation API и отмена перехода, View Transitions в SPA, `moveBefore`, `URLPattern`, карта новых API и статус поддержки | 3.10 Future of web (Baseline и Interop — 15.08) |
+
 ### Дома понятий HTML (глава 5)
 
 Глава 5 — разметка и то, что браузер из неё строит. Блокирующие ресурсы, `async`/`defer` и подсказки как оптимизация — 17.10, CSP — 17.06, метатеги для поиска — 3.07, API DOM — 3.04, конвейер отрисовки — 3.03.

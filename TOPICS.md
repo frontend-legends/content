@@ -77,26 +77,26 @@
 
 ## 3. Web
 
-- **3.01 What is web** — `/content/web/what-is-web`
-  **Стандарты и организации** · **Путь от URL до пикселей** · **Архитектуры рендеринга** · **Веб как среда выполнения**
-- **3.02 Browser engines** — `/content/web/browser-engines`
-  **Многопроцессная архитектура** · **Компоненты рендерер-процесса** · **Движки браузеров** · **V8 в деталях** · Hidden Classes (Maps) и Inline Caching · Деоптимизация · **Garbage Collection в V8** · Что вызывает GC pressure · **Что спрашивают на интервью**
-- **3.03 Rendering** — `/content/web/rendering`
-  **Critical Rendering Path (CRP)** · **Парсинг HTML и построение DOM** · **Блокирующие ресурсы - стратегии загрузки скриптов** · **Resource Hints** · **Построение CSSOM** · **Render Tree** · **Layout (Reflow)** · **Paint** · **Compositing (Композитинг)** · **content-visibility: auto** · **requestAnimationFrame и requestIdleCallback** · **Виртуальный DOM и реальный рендеринг** · **DevTools: диагностика проблем рендеринга** · **Часто задаваемые вопросы на собеседовании** · **Оптимизация рендеринга - сводка**
-- **3.04 DOM & Events** — `/content/web/dom-events`
-  **DOM Tree** · **DOM Manipulation** · **Событийная модель** · **Event Delegation** · **Passive Listeners** · **AbortController** · **Custom Events** · **MutationObserver** · **Event Loop и рендеринг**
-- **3.05 Browser APIs** — `/content/web/browser-apis`
-  **IntersectionObserver** · Основные параметры · **ResizeObserver** · Доступные размеры · **Performance API** · User Timing · PerformanceObserver · Navigation Timing · **requestAnimationFrame** · **requestIdleCallback** · **AbortController** · **Page Visibility API** · **Broadcast Channel** · **Streams API** · **Сводная таблица** · **Типичные вопросы на собеседовании**
-- **3.06 Core web vitals** — `/content/web/core-web-vitals`
-  **Зачем нужны метрики производительности** · **LCP (Largest Contentful Paint) - глубокое погружение** · **INP (Interaction to Next Paint) - глубокое погружение** · **CLS (Cumulative Layout Shift) - глубокое погружение** · **Сводная таблица Core Web Vitals** · **Дополнительные метрики производительности** · **RUM vs Synthetic** · **Инструменты измерения** · **Оптимизация на практике - чек-лист** · **Типичные вопросы на собеседовании**
-- **3.07 SEO** — `/content/web/seo`
-  **Как работают поисковые системы** · **Рендеринг и индексация** · **Мета-теги** · Базовые мета-теги · Open Graph (социальные сети) · Twitter Cards · **Structured Data (JSON-LD)** · **Semantic HTML и SEO** · **URL, навигация и технические файлы** · **Интернационализация (i18n)** · **Производительность и ранжирование** · **Частые ошибки фронтендеров** · **Инструменты** · **SEO-чеклист для фронтенда**
-- **3.08 DevTools** — `/content/web/devtools`
-  **Обзор панелей** · **Performance Profiling** · **Memory Debugging** · **Network Analysis** · **Rendering Debugging** · **Console Power-User** · **Breakpoints** · **Source Maps** · **Практические сценарии для интервью**
-- **3.09 PWA** — `/content/web/pwa`
-  **Что такое PWA** · **Service Worker Lifecycle** · Этапы жизненного цикла · Регистрация Service Worker · install event - precaching · activate event - очистка старых кэшей · skipWaiting() и clients.claim() · Обновление Service Worker · **Стратегии кэширования** · Cache First · Network First · Stale-While-Revalidate · Cache Invalidation · **Offline** · **Web App Manifest** · **Push Notifications** · **Navigation Preload** · **Ограничения PWA** · **Когда PWA, а когда нет**
-- **3.10 Future of web** — `/content/web/future-of-web`
-  **WebAssembly (WASM)** · Реальные примеры использования · Загрузка и использование WASM из JS · WASI - WebAssembly System Interface · Component Model · **Web Components** · Custom Elements · Shadow DOM - инкапсуляция · Declarative Shadow DOM - совместимость с SSR · Когда Web Components vs фреймворк-компоненты · **Новые Web APIs** · View Transitions API · Popover API · Navigation API · Speculation Rules API · Scheduler API · **WebGPU** · **AI в браузере** · Текущие API и подходы · Практические сценарии · **Baseline & Interop** · **Что учить сейчас, а что наблюдать**
+- **3.01 What is web** — `/content/web/what-is-web` · по стандарту
+  **Интернет и веб** · **URL** · Нормализация · Относительные адреса · Фрагмент · Строка запроса · **Origin и site** · **Кто делает стандарты** · **Браузер как песочница** · Безопасный контекст · Веб и нативные приложения
+- **3.02 Browser engines** — `/content/web/browser-engines` · по стандарту
+  **Процессы** · **Изоляция сайтов** · Процесс — не граница доступа · **Внутри рендерера** · **Движки** · User-Agent
+- **3.03 Rendering** — `/content/web/rendering` · по стандарту
+  **Конвейер кадра** · **Что запускает каждый этап** · Раскладка и перерисовка · **Браузер копит изменения** · Принудительная синхронная раскладка · Layout thrashing · **Слои и композиция** · Цена слоя · **Как это смотреть** · Virtual DOM
+- **3.04 DOM & Events** — `/content/web/dom-events` · по стандарту
+  **Поиск и изменение DOM** · Поиск · Создание и вставка · **Путь события** · Остановка и отмена · Параметры слушателя · Passive-слушатели · **Делегирование** · **Свои события** · Доверенные события · **Наблюдение за DOM**
+- **3.05 Browser APIs** — `/content/web/browser-apis` · по стандарту
+  **Наблюдатели** · IntersectionObserver · ResizeObserver · MutationObserver · **Потоки** · **Общение между вкладками** · **Приоритеты задач** · **Разрешения и другие API**
+- **3.06 Core web vitals** — `/content/web/core-web-vitals` · по стандарту
+  **Откуда берутся числа** · **LCP** · Из чего складывается LCP · **CLS** · **INP** · **Navigation и Resource Timing** · Server-Timing · Чужие ресурсы
+- **3.07 SEO** — `/content/web/seo` · по стандарту
+  **Что видит робот** · **Ссылки и адреса** · **Код ответа и мягкая 404** · **Дубли и основной адрес** · robots.txt и noindex · **Структурированные данные** · Превью ссылок · **Sitemap и языковые версии** · hreflang · **Скорость и удобство**
+- **3.08 DevTools** — `/content/web/devtools` · по стандарту
+  **Как DevTools разговаривает с браузером** · **Elements** · **Console** · Снимок и живой объект · Методы console · Утилиты командной строки · **Sources: точки останова** · **Network** · Водопад · Изменить сеть · **Performance** · **Rendering, Coverage и остальное**
+- **3.09 PWA** — `/content/web/pwa` · по стандарту
+  **Из чего состоит PWA** · **Жизненный цикл Service Worker** · Первая загрузка без контроля · Область действия · Установка атомарна · **Обновление** · **Перехват запросов** · Navigation preload · **Манифест** · **Push-уведомления** · **Ограничения**
+- **3.10 Future of web** — `/content/web/future-of-web` · по стандарту
+  **Откуда берутся новые API** · **Navigation API** · Отмена перехода · **Анимированные переходы в SPA** · **moveBefore** · **URLPattern** · **Карта новых возможностей** · Статус поддержки
 
 ## 4. Network and API
 
