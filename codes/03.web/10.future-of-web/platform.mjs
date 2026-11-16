@@ -14,9 +14,12 @@ const titles = { '/': 'Главная', '/catalog': 'Каталог', '/cart': '
 const app = `
   window.marker = 'документ не перезагружался';
   window.log = [];
+  window.unloads = 0;
+  addEventListener('beforeunload', () => unloads++);
   navigation.addEventListener('navigate', (e) => {
     const path = new URL(e.destination.url).pathname;
     log.push([e.navigationType, path, e.canIntercept]);
+    if (window.unsaved) { log.push(['можно отменить', e.cancelable]); if (e.cancelable) { e.preventDefault(); return; } }
     if (!e.canIntercept) { e.preventDefault(); return; }             // для проверки — остаёмся на странице
     if (!(path in TITLES) || e.hashChange || e.downloadRequest) return;
     e.intercept({
@@ -109,6 +112,15 @@ try {
   }
   await page.evaluate(() => navigation.navigate('/cart').finished);
   await take();
+
+  // --- несохранённая форма: переход внутри SPA отменяется preventDefault, beforeunload на него не приходит ---
+  assert.equal(await page.evaluate(() => window.unloads), 0);          // все переходы выше были без выгрузки документа
+  await page.evaluate(() => { window.unsaved = true; });
+  await page.click('#to-catalog');
+  await page.waitForTimeout(100);
+  assert.deepEqual(await take(), [['push', '/catalog', true], ['можно отменить', true]]);
+  assert.equal(page.url(), `${base}/cart`);
+  await page.evaluate(() => { window.unsaved = false; });
 
   // --- старый роутер на pushState: navigate видит переход, popstate — нет ---
   await page.evaluate(() => history.pushState({}, '', '/legacy'));
