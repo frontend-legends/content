@@ -148,24 +148,24 @@
 
 ## 6. CSS
 
-- **6.01 Cascade & Styling** — `/content/css/styling`
-  **Как CSS применяется к HTML** · **Каскад (Cascade)** · Порядок приоритета (от низшего к высшему) · Important · **Специфичность (Specificity)** · Примеры вычисления · Функциональные псевдоклассы и специфичность · **Наследование (Inheritance)** · Наследуемые (inherited) · Ненаследуемые (non-inherited) · Ключевые слова · **Box Model** · Box-sizing · Margin Collapse (схлопывание margins) · **Единицы измерения** · CSS-функции для значений · **Цвета** · **Частые вопросы на собесе**
-- **6.02 Selectors & At-Rules** — `/content/css/css-rules`
-  **Типы селекторов** · Базовые · Комбинаторы · Селекторы атрибутов · **Псевдоклассы** · Структурные · State (состояние) · Form (формы) · Функциональные · **Псевдоэлементы** · **At-rules** · Справочная таблица · Layer - управление каскадом · Property - типизированные custom properties · Supports - feature detection · Scope - scoped стили · **CSS-функции** · **Частые вопросы на собесе**
-- **6.03 Layout & Flow** — `/content/css/flow`
-  **Normal Flow** · **Display** · None vs visibility hidden vs opacity 0 · **Block Formatting Context (BFC)** · Что создаёт BFC · Зачем нужен BFC · **Позиционирование** · Position sticky - deep dive · Containing block · **Stacking Context** · Что создаёт stacking context · Пример: z-index не работает · Isolation isolate · **Flexbox** · Оси · Container properties · Item properties · Flex shorthand · **Grid** · Container properties · Ключевые функции · Auto-fill vs auto-fit · Named areas · Subgrid · **Flexbox vs Grid** · **Частые вопросы на собесе**
-- **6.04 Responsive Web Design** — `/content/css/rwd`
-  **Mobile-first vs Desktop-first** · **Media Queries** · Синтаксис · Полезные media features · **Container Queries** · Синтаксис · Container query units · Media queries vs Container queries · **Viewport Units** · Классические · Проблема 100vh на мобильных · Современные единицы · **Fluid Typography** · **Адаптивные паттерны** · Sidebar layout (Grid) · Card grid (auto-fit + minmax) · Stack-to-horizontal (Flexbox) · **Scroll Snap** · **Logical Properties** · **Частые вопросы на собесе**
-- **6.05 Animations & Transitions** — `/content/css/animations`
-  **Transitions** · Свойства · Что можно анимировать · **Keyframes и animation** · Свойства animation · Animation-fill-mode · **Timing Functions** · **Производительность анимаций** · Три уровня рендеринга · Какие свойства что вызывают · Will-change · **Prefers-reduced-motion** · **Scroll-driven Animations** · **View Transitions API** · **Частые вопросы на собесе**
-- **6.06 Typography & Fonts** — `/content/css/typography`
-  **Подключение шрифтов** · Font-face · Self-hosting vs CDN · **Font-display** · FOIT vs FOUT · **Variable Fonts** · Variation axes · **Текстовые свойства** · Line-height · White-space · Word-break vs overflow-wrap · Hyphens · **Текстовое переполнение** · Однострочное (ellipsis) · Многострочное (line-clamp) · **Text-wrap: balance / pretty** · Balance · Pretty · **Оптимизация загрузки шрифтов** · 1. Preload критичных шрифтов · 2. Subset через unicode-range · 3. Size-adjust для CLS prevention · **Частые вопросы на собесе**
-- **6.07 Visual Effects** — `/content/css/visual-effects`
-  **Backgrounds** · Множественные фоны · Background-size · Background-clip text · Background-attachment fixed · **Градиенты** · Linear-gradient() · Radial-gradient() · Conic-gradient() · Gradient borders · **Тени** · Box-shadow · Box-shadow vs drop-shadow filter · Text-shadow · **Filter и backdrop-filter** · Filter · Backdrop-filter · **Clip-path и mask** · Clip-path · Mask · **Mix-blend-mode и background-blend-mode** · Mix-blend-mode · Основные режимы · Background-blend-mode · **Border-radius и border-image** · Advanced border-radius · **Aspect-ratio** · **Частые вопросы на собесе**
-- **6.08 Modern CSS** — `/content/css/modern-css`
-  **CSS Custom Properties** · Scope и наследование · Dynamic: изменение через JS и CSS · Theming pattern · Custom Properties vs Preprocessor Variables · Property - типизированные custom properties · **CSS Nesting** · **:has() в действии** · Условная стилизация карточки · Глобальное состояние без JS · Quantity queries · **Новые цветовые пространства** · Почему oklch лучше HSL · Color-mix() и light-dark() · **CSS Performance** · Contain · Content-visibility auto · Селекторы и производительность · **Другие новинки** · Text-wrap: balance / pretty · Accent-color · Color-scheme · **Стилизация форм** · **Частые вопросы на собесе**
-- **6.09 CSS Architecture** — `/content/css/architecture`
-  **Проблема масштабирования CSS** · **Методологии именования** · BEM (Block Element Modifier) · Другие методологии · **CSS Modules** · Composes - композиция · **CSS-in-JS** · Runtime (styled-components, emotion) · Zero-runtime (vanilla-extract, Panda CSS) · Trade-offs · **Utility-first CSS** · Tailwind CSS / UnoCSS · Extraction через @apply (Tailwind) · Преимущества и недостатки · **Design Tokens** · **Сравнение подходов** · **Архитектурные паттерны** · Layer structure · Component-scoped · Token-driven · **На фронте: что выбрать** · **Частые вопросы на собесе**
+- **6.01 Cascade & Styling** — `/content/css/styling` · по стандарту
+  **Почему правило не применилось** · **Каскад по шагам** · Происхождение и важность · Контекст и атрибут style · **Специфичность** · Псевдоклассы-функции · Как не воевать со специфичностью · **!important** · **Каскадные слои** · **Наследование** · Ключевые слова · **Вычисленное значение** · em и rem · line-height · Проценты · Единицы · **Блочная модель**
+- **6.02 Selectors & At-Rules** — `/content/css/css-rules` · по стандарту
+  **Что выбирает селектор** · Атрибуты · **Как браузер сопоставляет селекторы** · **Псевдоклассы** · Положение среди соседей · Взаимодействие · Формы · `:is()`, `:where()` и `:not()` · `:has()` · **Псевдоэлементы** · **At-rules** · @supports · @scope
+- **6.03 Layout & Flow** — `/content/css/flow` · по стандарту
+  **Поток и display** · Как спрятать элемент · **Схлопывание отступов** · **Контекст форматирования** · **Позиционирование** · fixed, который прилип к родителю · sticky · **Контекст наложения** · **Flexbox** · Сокращение flex · Почему элемент не сжимается · **Grid** · auto-fill и auto-fit · Почему 1fr не делит поровну · Неявная сетка и subgrid · **Flexbox или Grid** · Центрирование
+- **6.04 Responsive Web Design** — `/content/css/rwd` · по стандарту
+  **Окно просмотра** · **Медиазапросы** · Mobile-first · Синтаксис диапазонов · Предпочтения и способ ввода · **Container queries** · Ограничения · **Единицы окна** · 100vh на телефоне · 100vw и полоса прокрутки · **Плавные размеры** · Зум · **Логические свойства** · **Прокрутка с привязкой**
+- **6.05 Animations & Transitions** — `/content/css/animations` · по стандарту
+  **Переход** · Когда переход стартует · События и прерывание · **Что можно анимировать** · display: none · height: auto · CSS-переменные · **Ключевые кадры** · fill-mode · transition или animation · **Функции плавности** · **Плавность** · **Анимации по прокрутке** · **View Transitions**
+- **6.06 Typography & Fonts** — `/content/css/typography` · по стандарту
+  **Как браузер выбирает шрифт** · **@font-face** · Поднаборы · **Пока шрифт грузится** · preload и crossorigin · **Подмена без сдвига** · **Вариативные шрифты** · **Текст на странице** · Размер и строка · Цифры · Пробелы и переносы · Многоточие и обрезка строк · Ровные строки
+- **6.07 Visual Effects** — `/content/css/visual-effects` · по стандарту
+  **Фон** · **Картинки в боксе** · aspect-ratio · **Градиенты** · Пространство интерполяции · **Тени** · box-shadow и drop-shadow · Тень обрезана · **Прозрачность и фильтры** · opacity и прозрачный цвет · filter · backdrop-filter · **Обрезка и маски** · clip-path · mask · **Смешение цветов** · Градиентный текст
+- **6.08 Modern CSS** — `/content/css/modern-css` · по стандарту
+  **CSS-переменные** · Подстановка при вычислении · Переменные против переменных Sass · **@property** · **Вложенность** · **Цвета** · Темы · **Якорное позиционирование** · **Формы**
+- **6.09 CSS Architecture** — `/content/css/architecture` · по стандарту
+  **Почему CSS трудно масштабировать** · **Методологии** · BEM · Другие методологии · **Изоляция** · CSS Modules · scoped во Vue · Shadow DOM · @scope · **Слои как архитектура** · **Токены** · **Порядок и мёртвый код** · Что выбрать
 
 ## 7. JavaScript
 
