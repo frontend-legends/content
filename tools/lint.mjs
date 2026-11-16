@@ -37,8 +37,10 @@ const LANGS = new Set([
   'graphql', 'sql', 'md', 'markdown', 'java', 'c', 'go', 'py', 'rust', 'xml', 'wasm', 'http', 'dockerfile', 'toml', 'idl', 'bnf',
 ]);
 const RUNNABLE = new Set(['js', 'ts', 'jsx', 'tsx', 'vue']);
-// главы со своим шаблоном: 02 — другая структура (вне этого стандарта), 18 и 20 — карьера, облегчённый шаблон
+// главы со своим шаблоном: 02 — темы-категории задач (раздел «Задачи», см. CONTENT.md; заглушки без reviewed
+// пропускаются), 18 и 20 — карьера, облегчённый шаблон
 const SKIP_CHAPTERS = ['02.'];
+const TAIL_ALGO = ['Красные флаги в ответе', 'Как спрашивают на собеседовании', 'Полезные ссылки'];
 const LIGHT_CHAPTERS = ['18.', '20.'];
 const WORDS = { min: 900, max: 4000 };
 
@@ -85,6 +87,7 @@ function lint(file) {
 
   const isIndex = basename(file).startsWith('0.index');
   const light = LIGHT_CHAPTERS.some((c) => rel.startsWith(c));
+  const algo = rel.startsWith('02.') && /^## Задачи$/m.test(src);
 
   // frontmatter
   if (!fm) err('нет frontmatter');
@@ -184,7 +187,7 @@ function lint(file) {
 
   // хвост главы
   const titles = h2.map((n) => textOf(n).trim());
-  const tail = light ? TAIL_LIGHT : TAIL_FULL;
+  const tail = algo ? TAIL_ALGO : light ? TAIL_LIGHT : TAIL_FULL;
   const optionalLight = ['Красные флаги в ответе', 'Как спрашивают на собеседовании', 'Практика'];
   const narrative = titles.filter((t) => !tail.includes(t) && !(light && optionalLight.includes(t)));
   const tailSeen = titles.filter((t) => tail.includes(t));
@@ -198,7 +201,8 @@ function lint(file) {
 
   // вопросы
   const qs = comps('question');
-  if (!light && (qs.length < 5 || qs.length > 7)) err(`вопросов ::question ${qs.length}, нужно 5–7`);
+  if (algo && (qs.length < 3 || qs.length > 5)) err(`вопросов ::question ${qs.length}, в теме главы 02 нужно 3–5`);
+  else if (!algo && !light && (qs.length < 5 || qs.length > 7)) err(`вопросов ::question ${qs.length}, нужно 5–7`);
   for (const q of qs) {
     if (q.attributes?.level) err('::question без level: книга не делит ответы по уровням', q);
     if (!slots(q).includes('answer')) err('::question без #answer', q);
@@ -208,7 +212,8 @@ function lint(file) {
 
   // практика
   const ps = comps('practice');
-  if (!light && (ps.length < 2 || ps.length > 3)) err(`задач ::practice ${ps.length}, нужно 2–3`);
+  if (algo && ps.length < 1) err('в теме главы 02 нет задач ::practice');
+  else if (!algo && !light && (ps.length < 2 || ps.length > 3)) err(`задач ::practice ${ps.length}, нужно 2–3`);
   for (const p of ps) {
     if (!p.attributes?.title) err('::practice без title', p);
     const sol = (p.children ?? []).find((c) => c.type === 'componentContainerSection' && c.name === 'solution');
@@ -229,7 +234,7 @@ function lint(file) {
   const endHeading = h2.find((n) => tail.includes(textOf(n).trim()) || (light && optionalLight.includes(textOf(n).trim())));
   const end = endHeading ? root.indexOf(endHeading) : root.length;
   const words = root.slice(start, end).filter((n) => n.type !== 'code').map(textOf).join(' ').split(/\s+/).filter(Boolean).length;
-  if (words < WORDS.min) warn(`рассказ — ${words} слов, это мало для темы (ориентир ${WORDS.min}–${WORDS.max})`);
+  if (words < WORDS.min && !algo) warn(`рассказ — ${words} слов, это мало для темы (ориентир ${WORDS.min}–${WORDS.max})`);
   if (words > WORDS.max) warn(`рассказ — ${words} слов, это много (ориентир ${WORDS.min}–${WORDS.max}): что можно отдать соседним темам?`);
 
   // проверочный код
@@ -247,7 +252,7 @@ const reviewed = (f) => /^reviewed:/m.test(readFileSync(f, 'utf8').split('\n---'
 const selected = files.filter((f) => {
   const rel = relative(ROOT, f);
   if (filters.length) return filters.some((x) => rel.includes(x));
-  if (SKIP_CHAPTERS.some((c) => rel.startsWith(c))) return false;
+  if (SKIP_CHAPTERS.some((c) => rel.startsWith(c)) && !reviewed(f)) return false;
   return REPORT || reviewed(f);
 });
 
