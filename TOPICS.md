@@ -143,7 +143,7 @@
   **Элемент form** · **Input types** · **Другие элементы форм** · Label · Textarea · Select, option и optgroup · Button · Fieldset и legend · Datalist · Output, progress и meter · **HTML5 Constraint Validation** · Атрибуты валидации · CSS-псевдоклассы · Constraint Validation API · **FormData API** · **События форм** · `submit` · `input` vs `change` · Другие события · **На фронте: controlled vs uncontrolled** · **Частые вопросы на собесе**
 - **5.08 Media** — `/content/html/media`
   **Изображения (img)** · Ключевые атрибуты · **Responsive images** · 1. Resolution switching (srcset + sizes) · 2. Art direction (picture) · Когда что использовать · **Современные форматы изображений** · **Video и audio** · **SVG** · Способы вставки · Доступность SVG · **Canvas** · SVG vs Canvas · **Iframe** · Sandbox · Permissions Policy (allow) · Ленивая загрузка · Защита от clickjacking · PostMessage коммуникация · CSP и iframe · **Частые вопросы на собесе**
-- **5.09 Web Components** — `/content/html/attributes`
+- **5.09 Web Components** — `/content/html/web-components`
   **Что такое Web Components** · **Custom Elements** · Создание · Lifecycle callbacks · Autonomous vs Customized Built-in · **Shadow DOM** · Создание · Open vs Closed · Light DOM vs Shadow DOM · **Template и slot** · Template · Slot · **CSS и Shadow DOM** · Инкапсуляция · Специальные селекторы · Part - стилизация извне · **Практический пример: Counter** · **На фронте: Web Components vs Framework Components** · Библиотеки поверх Web Components · **Частые вопросы на собесе**
 
 ## 6. CSS
