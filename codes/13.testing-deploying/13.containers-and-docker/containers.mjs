@@ -5,8 +5,9 @@ import { writeFileSync, mkdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { project, run, write } from '../../_lib/project.mjs';
 
-if (run('docker', ['info']).status !== 0) {
-  console.log('containers ok (пропущено: Docker не запущен)');
+// демон может не отвечать вовсе — тогда docker info висит; ждём не больше 10 секунд
+if (run('docker', ['info'], { timeout: 10_000 }).status !== 0) {
+  console.log('containers ok (пропущено: Docker не запущен или не отвечает)');
   process.exit(0);
 }
 const tags = [];
