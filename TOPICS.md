@@ -41,39 +41,60 @@
 
 ## 2. Algorithms and Data structures
 
-- **2.01 Data structures** — `/content/algorithms-data-structures/data-structures`
-  **Интерфейс vs Реализация** · **Базовые структуры** · **Массивы** · Статический массив · Динамический массив · Многомерные массивы · **Связные списки** · Односвязный список (Singly Linked List) · Двусвязный список (Doubly Linked List) · Циклический список (Circular Linked List) · Skip List · **Стек и очереди** · Стек (Stack, LIFO) · Очередь (Queue, FIFO) · Дек (Deque, Double-Ended Queue) · Очередь с приоритетами (Priority Queue) · Кольцевая очередь (Circular Queue) · **Хеш-структуры** · Хеш-таблица (Hash Table, Hash Map) · Множество (Set) и Мультимножество (Multiset) · **Деревья (Trees)** · Binary Tree (Бинарное дерево) · Binary Search Tree (BST, Бинарное дерево поиска) · AVL Tree · Red-Black Tree · Splay Tree · Trie (Prefix Tree) · Fenwick Tree (Binary Indexed Tree) · Segment Tree (Дерево отрезков) · **Кучи (Heaps)** · Min-Heap (минимальная куча) · Max-Heap (максимальная куча) · Fibonacci Heap · **Графы (Graphs)** · Матрица смежности (Adjacency Matrix) · Список смежности (Adjacency List) · Directed Graph (Ориентированный граф) · Undirected Graph (Неориентированный граф) · Weighted Graph (Взвешенный граф) · Unweighted Graph (Невзвешенный граф) · DAG (Directed Acyclic Graph) · **Критерии выбора структуры данных**
-- **2.02 Sorting algorithms** — `/content/algorithms-data-structures/sorting`
-  **Bubble Sort** · **Insertion Sort** · **Selection Sort** · **Merge Sort** · **Quick Sort** · **Heap Sort** · **Counting Sort** · **Radix Sort** · **Bucket Sort** · **Shell Sort** · **TimSort**
-- **2.03 Searching algorithms** — `/content/algorithms-data-structures/searching`
-  **Линейный поиск (Linear Search)** · **Бинарный поиск (Binary Search)** · **Интерполяционный поиск (Interpolation Search)** · **Экспоненциальный поиск (Exponential Search)** · **Джамп-поиск (Jump Search)**
-- **2.04 Strings and arrays** — `/content/algorithms-data-structures/strings-arrays`
-  **Быстрый обзор** · Merge Sorted Arrays · Remove Element · Remove Duplicates from Sorted Array · Remove Duplicates from Sorted Array II · Majority Element · Rotate Array · Best Time to Buy and Sell Stock · Best Time to Buy and Sell Stock II · Jump Game · Jump Game II · H-Index · Insert Delete GetRandom O(1) · Product of Array Except Self · Gas Station · Candy · Trapping Rain Water · Roman to Integer · Integer to Roman · Length of Last Word · Longest Common Prefix · Reverse Words in a String · Zigzag Conversion · Find the Index of the First Occurrence in a String · Text Justification
-- **2.05 Two pointers** — `/content/algorithms-data-structures/two-pointers`
-  **Быстрый обзор** · Valid Palindrome · Is Subsequence · Two Sum II - Input Array Is Sorted · Container With Most Water · 3Sum
-- **2.06 Sliding window** — `/content/algorithms-data-structures/sliding-window`
-- **2.07 Matrix** — `/content/algorithms-data-structures/matrix`
-- **2.08 Hashmap** — `/content/algorithms-data-structures/hashmap`
-- **2.09 Intervals** — `/content/algorithms-data-structures/intervals`
-- **2.10 Stack** — `/content/algorithms-data-structures/stack`
-- **2.11 Linked list** — `/content/algorithms-data-structures/linked-list`
-- **2.12 Binary tree general** — `/content/algorithms-data-structures/binary-tree-general`
-- **2.13 Binary tree BFS** — `/content/algorithms-data-structures/binary-tree-bfs`
-- **2.14 Binary search tree** — `/content/algorithms-data-structures/binary-search-tree`
-- **2.15 Graph general** — `/content/algorithms-data-structures/graph-general`
-- **2.16 Graph BFS** — `/content/algorithms-data-structures/graph-bfs`
-- **2.17 Trie** — `/content/algorithms-data-structures/trie`
-- **2.18 Backtracking** — `/content/algorithms-data-structures/backtracking`
-- **2.19 Divide and Conquer** — `/content/algorithms-data-structures/divide-and-conquer`
-- **2.20 Kadane's algorithm** — `/content/algorithms-data-structures/kadanes-algorithm`
-- **2.21 Binary search** — `/content/algorithms-data-structures/binary-search`
-- **2.22 Heap** — `/content/algorithms-data-structures/heap`
-- **2.23 Bit manipulation** — `/content/algorithms-data-structures/bit-manipulation`
-- **2.24 Math** — `/content/algorithms-data-structures/math`
-- **2.25 1D DP** — `/content/algorithms-data-structures/1d-dp`
-- **2.26 Multidimensional DP** — `/content/algorithms-data-structures/multidimensional-dp`
-- **2.27 Other algorithms** — `/content/algorithms-data-structures/other`
-  **Подходы к решению задач**
+- **2.01 Data structures** — `/content/algorithms-data-structures/data-structures` · по стандарту
+  **Интерфейс и реализация** · **Массив** · Динамический массив · Почему массив быстрее, чем кажется · **Связный список** · **Стек, очередь и дек** · Кольцевой буфер · **Хеш-таблица** · Коллизии · Перестроение · Множество и Map · **Деревья** · Двоичное дерево поиска и балансировка · Префиксное дерево · Деревья для запросов на отрезках · **Кучи** · **Графы** · **Как выбрать структуру**
+- **2.02 Sorting algorithms** — `/content/algorithms-data-structures/sorting` · по стандарту
+  **Как сравнивать сортировки** · **Сортировка вставками** · **Сортировка слиянием** · **Быстрая сортировка** · **Пирамидальная сортировка** · **Нижняя граница O(n log n)** · **Сортировки без сравнений** · **Сортировка в стандартных библиотеках**
+- **2.03 Searching algorithms** — `/content/algorithms-data-structures/searching` · по стандарту
+  **Линейный поиск** · **Двоичный поиск** · **Интерполяционный поиск** · **Экспоненциальный поиск** · **Поиск прыжками** · **Как выбрать**
+- **2.04 Strings and arrays** — `/content/algorithms-data-structures/strings-arrays` · по стандарту
+  **Как узнать паттерн** · **Шаблоны** · **Задачи**
+- **2.05 Two pointers** — `/content/algorithms-data-structures/two-pointers` · по стандарту
+  **Как узнать паттерн** · **Шаблоны** · Почему сдвиг не теряет ответ · **Задачи**
+- **2.06 Sliding window** — `/content/algorithms-data-structures/sliding-window` · по стандарту
+  **Как узнать паттерн** · **Шаблоны** · Самое длинное и самое короткое · **Задачи**
+- **2.07 Matrix** — `/content/algorithms-data-structures/matrix` · по стандарту
+  **Как узнать паттерн** · **Шаблон** · **Задачи**
+- **2.08 Hashmap** — `/content/algorithms-data-structures/hashmap` · по стандарту
+  **Как узнать паттерн** · **Шаблоны** · **Задачи**
+- **2.09 Intervals** — `/content/algorithms-data-structures/intervals` · по стандарту
+  **Как узнать паттерн** · **Шаблон** · **Задачи**
+- **2.10 Stack** — `/content/algorithms-data-structures/stack` · по стандарту
+  **Как узнать паттерн** · **Шаблон** · **Задачи**
+- **2.11 Linked List** — `/content/algorithms-data-structures/linked-list` · по стандарту
+  **Как узнать паттерн** · **Шаблоны** · **Задачи**
+- **2.12 Binary Tree General** — `/content/algorithms-data-structures/binary-tree-general` · по стандарту
+  **Как узнать паттерн** · **Шаблоны** · **Задачи**
+- **2.13 Binary Tree BFS** — `/content/algorithms-data-structures/binary-tree-bfs` · по стандарту
+  **Как узнать паттерн** · **Шаблон** · Почему не shift · **Задачи**
+- **2.14 Binary Search Tree** — `/content/algorithms-data-structures/binary-search-tree` · по стандарту
+  **Как узнать паттерн** · **Шаблоны** · **Задачи**
+- **2.15 Graph General** — `/content/algorithms-data-structures/graph-general` · по стандарту
+  **Как узнать паттерн** · **Шаблон** · **Задачи**
+- **2.16 Graph BFS** — `/content/algorithms-data-structures/graph-bfs` · по стандарту
+  **Как узнать паттерн** · **Шаблон** · **Задачи**
+- **2.17 Trie** — `/content/algorithms-data-structures/trie` · по стандарту
+  **Как узнать паттерн** · **Задачи**
+- **2.18 Backtracking** — `/content/algorithms-data-structures/backtracking` · по стандарту
+  **Как узнать паттерн** · **Шаблон** · **Задачи**
+- **2.19 Divide and Conquer** — `/content/algorithms-data-structures/divide-and-conquer` · по стандарту
+  **Как узнать паттерн** · **Шаблон** · Как оценить сложность · **Задачи**
+- **2.20 Kadane's algorithm** — `/content/algorithms-data-structures/kadanes-algorithm` · по стандарту
+  **Как узнать паттерн** · **Шаблон** · **Задачи**
+- **2.21 Binary Search** — `/content/algorithms-data-structures/binary-search` · по стандарту
+  **Как узнать паттерн** · **Шаблон** · **Задачи**
+- **2.22 Heap** — `/content/algorithms-data-structures/heap` · по стандарту
+  **Как узнать паттерн** · **Шаблон** · **Задачи**
+- **2.23 Bit Manipulation** — `/content/algorithms-data-structures/bit-manipulation` · по стандарту
+  **Как узнать паттерн** · **Шаблон** · **Задачи**
+- **2.24 Math** — `/content/algorithms-data-structures/math` · по стандарту
+  **Как узнать паттерн** · **Шаблон** · **Задачи**
+- **2.25 1D DP** — `/content/algorithms-data-structures/1d-dp` · по стандарту
+  **Как узнать паттерн** · **Шаблон** · **Задачи**
+- **2.26 Multidimensional DP** — `/content/algorithms-data-structures/multidimensional-dp` · по стандарту
+  **Как узнать паттерн** · **Шаблон** · **Задачи**
+- **2.27 Other algorithms** — `/content/algorithms-data-structures/other` · по стандарту
+  **От ограничений к сложности** · **Карта паттернов** · **От перебора к оптимальному решению** · **Проверка решения стресс-тестом** · **Ловушки JavaScript в алгоритмах**
 
 ## 3. Web
 

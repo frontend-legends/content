@@ -15,7 +15,7 @@ const shared = readFileSync(join(here, '_shared.ts'), 'utf8');                  
 
 for (const file of readdirSync(chapter).filter((f) => f.endsWith('.md'))) {
   const md = readFileSync(join(chapter, file), 'utf8');
-  if (!/^reviewed:/m.test(md)) continue;
+  if (!/^reviewed:/m.test(md) || !md.includes('```ts')) continue;   // без кода (страница главы) — нечего сверять
   const topic = file.replace(/\.md$/, '');
   const dir = join(here, topic);
   assert.ok(existsSync(dir), `нет папки codes для ${topic}`);
