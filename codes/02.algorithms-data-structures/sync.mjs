@@ -11,6 +11,7 @@ const here = dirname(fileURLToPath(import.meta.url));
 const chapter = join(here, '..', '..', '02.algorithms-data-structures');
 const squash = (s) => s.replace(/\s+/g, '');
 let checked = 0;
+const shared = readFileSync(join(here, '_shared.ts'), 'utf8');                     // ListNode, TreeNode
 
 for (const file of readdirSync(chapter).filter((f) => f.endsWith('.md'))) {
   const md = readFileSync(join(chapter, file), 'utf8');
@@ -18,7 +19,7 @@ for (const file of readdirSync(chapter).filter((f) => f.endsWith('.md'))) {
   const topic = file.replace(/\.md$/, '');
   const dir = join(here, topic);
   assert.ok(existsSync(dir), `нет папки codes для ${topic}`);
-  const code = readdirSync(dir).filter((f) => f.endsWith('.ts')).map((f) => squash(readFileSync(join(dir, f), 'utf8'))).join('\n');
+  const code = readdirSync(dir).filter((f) => f.endsWith('.ts')).map((f) => squash(readFileSync(join(dir, f), 'utf8'))).join('\n') + squash(shared);
   // все блоки ts темы: шаблоны и решения
   for (const [, body] of md.matchAll(/```ts\n([\s\S]*?)```/g)) {
     if (body.startsWith('// схема')) continue;
