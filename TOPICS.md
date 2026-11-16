@@ -100,30 +100,30 @@
 
 ## 4. Network and API
 
-- **4.01 Networking Fundamentals** — `/content/network-api/networking-fundamentals`
-  **Клиент-серверная модель** · **IP-адреса и порты** · **TCP vs UDP** · **DNS: как домен превращается в IP** · **TLS/HTTPS: шифрование на транспортном уровне** · **CDN: ускорение доставки контента** · **Модель OSI и TCP/IP - кратко** · **Часто спрашивают на собеседовании**
-- **4.02 HTTP** — `/content/network-api/http`
-  **Структура HTTP-запроса и ответа** · **HTTP-методы** · **Статус-коды** · 1xx - Informational · 2xx - Success · 3xx - Redirection · 4xx - Client Error · 5xx - Server Error · **Ключевые заголовки** · Request headers · Response headers · Content Negotiation · **HTTP/1.1 vs HTTP/2 vs HTTP/3** · **HTTPS: что добавляет TLS** · **Сжатие** · **Часто спрашивают на собеседовании**
-- **4.03 Request Lifecycle** — `/content/network-api/request-lifecycle`
-  **Полная цепочка: от URL до пикселей** · **1. URL parsing и HSTS check** · **2. DNS Lookup** · **3. TCP Handshake** · **4. TLS Handshake** · **5. HTTP Request** · **6. Server Processing** · **7. HTTP Response (TTFB)** · **8. HTML Parsing и построение DOM** · **9. Загрузка субресурсов** · **10. Rendering Pipeline** · **Связь с Core Web Vitals** · **Повторная навигация и кэш** · **Ответ на собеседовании**
-- **4.04 CORS** — `/content/network-api/cors`
-  **Same-Origin Policy (SOP)** · Примеры сравнения origin · Что SOP блокирует и что нет · **CORS - Cross-Origin Resource Sharing** · **Simple Requests vs Preflight** · Как выглядит preflight · **Access-Control-\* заголовки** · Заголовки ответа (сервер устанавливает) · Заголовки запроса (браузер добавляет автоматически) · **Credentials и куки в cross-origin запросах** · **Типичные ошибки и как их решать** · Ошибка 1: «No 'Access-Control-Allow-Origin' header is present» · Ошибка 2: «The value of the 'Access-Control-Allow-Origin' header must not be the wildcard '\*'» · Ошибка 3: «Request header field authorization is not allowed» · Ошибка 4: Preflight на каждый запрос - тормоза · Обходное решение: прокси · **Частые вопросы на собесе**
-- **4.05 REST API** — `/content/network-api/rest`
-  **Constraints REST** · **Дизайн ресурсов** · URL Naming Conventions · Правила именования · **Методы и CRUD** · **Идемпотентность и безопасность** · **Статус-коды в контексте REST** · **Пагинация** · Offset-based · Cursor-based · Сравнение · **Формат ошибок** · **Best Practices для фронтендера** · **Частые вопросы на собесе**
-- **4.06 GraphQL** — `/content/network-api/graphql`
-  **Проблемы REST, которые решает GraphQL** · **Queries** · Вложенность - один запрос вместо трёх · Переменные и aliases · **Mutations** · **Subscriptions** · **Schema и Type System** · Ключевые концепции типов · **Fragments** · **Сравнение с REST** · **Клиентские библиотеки** · **Когда REST лучше, когда GraphQL** · Выбирай REST, когда: · Выбирай GraphQL, когда: · **Частые вопросы на собесе**
-- **4.07 Data Fetching** — `/content/network-api/fetching`
-  **fetch API** · Базовый синтаксис · Основные options · Полный пример: POST-запрос · Чтение ответа · **Обработка ошибок** · **AbortController: отмена запросов** · Очистка в React (useEffect cleanup) · **Race Conditions** · Решение: AbortController · **Таймауты** · Комбинация таймаута и ручной отмены · **Retry-стратегии** · **Паттерн SWR (Stale-While-Revalidate)** · **Обзор библиотек для запросов**
-- **4.08 Caching** — `/content/network-api/caching`
-  **Зачем кэшировать** · **HTTP-кэш: Cache-Control** · Основные директивы · Типичные комбинации · **Валидация кэша: ETag и Last-Modified** · ETag (Entity Tag) · Last-Modified · **Expires (legacy)** · **CDN-кэширование** · Стратегии CDN-кэширования · **Браузерный кэш** · **Application-level кэш** · **Cache Invalidation** · Стратегии инвалидации · **Полная картина: кэширование при деплое**
-- **4.09 Authentication** — `/content/network-api/auth`
-  **Аутентификация vs Авторизация** · **Cookies** · Атрибуты Cookie · SameSite подробнее · **Sessions (серверные сессии)** · **JWT (JSON Web Token)** · Структура JWT · Плюсы и минусы JWT · **OAuth 2.0** · Роли в OAuth · Authorization Code + PKCE (для SPA) · **Refresh Tokens** · Стратегии обновления · **Где хранить токены** · Рекомендации · **Что спрашивают на собеседованиях**
-- **4.10 Browser Storage** — `/content/network-api/storage`
-  **Cookies** · Ограничения · Атрибуты cookies · **localStorage** · **sessionStorage** · **IndexedDB** · **Cache API** · **Сравнительная таблица** · **Безопасность хранилищ** · **Типичные вопросы на собеседовании**
-- **4.11 Realtime** — `/content/network-api/realtime`
-  **Зачем нужен real-time** · **Short Polling** · **Long Polling** · **Server-Sent Events (SSE)** · Ключевые особенности · Формат данных · Клиентский API · **WebSocket** · Жизненный цикл · Клиентский API · Reconnect с exponential backoff · **Сравнительная таблица** · **Когда что использовать** · **Типичные вопросы на собеседовании**
-- **4.12 API Patterns** — `/content/network-api/api-patterns`
-  **Версионирование API** · **Пагинация** · Offset-based · Cursor-based · Keyset (seek-based) · Сравнение · **Rate Limiting на клиенте** · **Optimistic Updates** · **Error Handling** · Типы ошибок · Пример: централизованный error handler · **API-слой в приложении** · **OpenAPI / Swagger** · **Типичные вопросы на собеседовании**
+- **4.01 Networking Fundamentals** — `/content/network-api/networking-fundamentals` · по стандарту
+  **Слои сети** · **IP-адреса и порты** · localhost — это два адреса · **TCP** · **UDP** · **DNS** · **Задержка и пропускная способность**
+- **4.02 HTTP** — `/content/network-api/http` · по стандарту
+  **Как выглядит сообщение** · Где кончается тело · **Методы** · **Коды ответа** · Редиректы и смена метода · **Заголовки и согласование** · Сжатие · **Версии HTTP** · HTTP/1.1 · HTTP/2 · HTTP/3
+- **4.03 Request Lifecycle** — `/content/network-api/request-lifecycle` · по стандарту
+  **От адреса до запроса** · **DNS** · **Соединение: TCP и TLS** · **Запрос и ответ** · Редиректы · **Повторные запросы** · **Дальше — браузер**
+- **4.04 CORS** — `/content/network-api/cors` · по стандарту
+  **Зачем нужен CORS** · **Простые запросы и preflight** · Кеш preflight · Правила для preflight · **Что код видит в ответе** · Режим no-cors · **Куки и учётные данные** · **CORS и кеши** · Редиректы · **Как обычно чинят CORS-ошибки**
+- **4.05 REST** — `/content/network-api/rest` · по стандарту
+  **Что такое REST** · **Ресурсы и адреса** · **Методы** · **Статусы и ошибки** · Формат ошибок · **Одновременные изменения** · **Без состояния** · **Описание API**
+- **4.06 GraphQL** — `/content/network-api/graphql` · по стандарту
+  **Схема и запросы** · **Как сервер выполняет запрос** · Проблема N+1 · **Ошибки и null** · **Кеширование** · **Защита сервера** · **GraphQL или REST**
+- **4.07 Data Fetching** — `/content/network-api/fetching` · по стандарту
+  **Что делает fetch** · **Когда промис отклоняется** · **Тело запроса** · **Редиректы** · **Повторы** · Одинаковые запросы · **Прогресс** · **Запросы при уходе со страницы** · **fetch, XMLHttpRequest и axios**
+- **4.08 Caching** — `/content/network-api/caching` · по стандарту
+  **Где живут кеши** · **Свежесть** · Эвристическая свежесть · **Проверка: ETag и 304** · **Директивы Cache-Control** · stale-while-revalidate · **Vary** · **Кеш браузера** · **Что как кешировать**
+- **4.09 Authentication** — `/content/network-api/auth` · по стандарту
+  **Кто ты и что тебе можно** · **Куки** · Domain и Path · Удаление куки · Secure, HttpOnly и префиксы · SameSite · **Заголовок Authorization** · **OAuth 2.0 и OpenID Connect** · Authorization Code по шагам
+- **4.10 Browser Storage** — `/content/network-api/storage` · по стандарту
+  **Что где хранить** · **localStorage** · **sessionStorage** · **IndexedDB** · Транзакции закрываются сами · Обновление схемы · **Cache API и файловая система origin** · **Квота и очистка** · Разделение по сайту
+- **4.11 Realtime** — `/content/network-api/realtime` · по стандарту
+  **Опрос** · **Server-Sent Events** · Переподключение без потерь · Шесть соединений · **WebSocket** · Авторизация и Origin · Переподключение · **Что выбрать**
+- **4.12 API Patterns** — `/content/network-api/api-patterns` · по стандарту
+  **Пагинация** · По смещению · Курсорная · **Идемпотентность** · **Лимиты частоты** · **Долгие операции** · **Загрузка файлов** · **Пакетные запросы**
 
 ## 5. HTML
 
