@@ -6,7 +6,7 @@ import { join } from 'node:path';
 import { project, run, write } from '../../_lib/project.mjs';
 
 // демон может не отвечать вовсе — тогда docker info висит; ждём не больше 10 секунд
-if (run('docker', ['info'], { timeout: 10_000 }).status !== 0) {
+if (run('docker', ['info'], { timeout: 10_000, killSignal: 'SIGKILL' }).status !== 0) {
   console.log('containers ok (пропущено: Docker не запущен или не отвечает)');
   process.exit(0);
 }
