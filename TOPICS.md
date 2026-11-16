@@ -127,24 +127,24 @@
 
 ## 5. HTML
 
-- **5.01 HTML5 Fundamentals** — `/content/html/markup-language`
-  **HTML5 Living Standard** · **Content Models (модели содержимого)** · Категории · Правила вложенности · Распространённые ошибки вложенности · **DOCTYPE и режимы парсинга** · Три режима · **Как браузер парсит HTML** · Этапы парсинга · Tokenizer (токенизатор) · Tree Construction (построение дерева) · Speculative Parsing (спекулятивный парсинг) · **HTML entities** · **Восстановление после ошибок парсинга** · **HTML vs XHTML** · **Частые вопросы на собесе**
-- **5.02 Document Structure & Rendering** — `/content/html/structure`
-  **Базовая структура документа** · **DOM-дерево** · Типы узлов · Пример DOM-дерева · **Critical Rendering Path (CRP)** · **Render-blocking ресурсы** · CSS блокирует рендеринг · JavaScript блокирует парсинг · Схема блокировки · **Reflow vs Repaint** · **Инкрементальный рендеринг** · **Частые вопросы на собесе**
-- **5.03 Head content** — `/content/html/head-content`
-  **Meta-теги** · Обязательные · SEO и описание · Open Graph и Twitter Cards · Другие полезные meta · **Link и ресурсные подсказки** · Базовое использование · Resource Hints · **Скрипты: async, defer, module** · Схема загрузки · Сравнение · **CSP через meta-тег** · **Style, base и noscript** · Style · Base · Noscript · **Частые вопросы на собесе**
-- **5.04 Semantics & Tags** — `/content/html/tags`
-  **Зачем нужна семантика** · **Семантические элементы HTML5** · Структурные (Sectioning) · Текстовые и контентные · **Section vs article vs div** · **Block vs Inline** · Дефолтное поведение · **Void elements (пустые элементы)** · **Document Outline (иерархия заголовков)** · Правила · **Устаревшие теги** · **Плохо / Хорошо: div soup vs семантика** · **Таблицы** · **Dialog** · **Details и summary** · **Списки: dl, dt, dd** · **Частые вопросы на собесе**
-- **5.05 Attributes** — `/content/html/attributes`
-  **Глобальные атрибуты** · **Data-атрибуты** · Доступ из JavaScript · Доступ из CSS · **Булевые атрибуты** · Основные булевые атрибуты · В JavaScript · **Attribute vs Property (DOM)** · Определения · Когда они расходятся · Таблица расхождений · Синхронизация · **Event-атрибуты** · **Атрибуты безопасности** · Rel noopener noreferrer · Sandbox (для iframe) · Crossorigin · Integrity (Subresource Integrity) · **Современные HTML-атрибуты** · **Частые вопросы на собесе**
-- **5.06 Accessibility** — `/content/html/accessibility`
-  **Зачем это нужно** · **WCAG 2.1** · Уровни соответствия · **Семантический HTML как основа** · **ARIA** · Первое правило ARIA · Roles (роли) · States & Properties (атрибуты) · `aria-label` vs `aria-labelledby` · **Навигация с клавиатуры** · `tabindex` · Focus trap (ловушка фокуса) · Skip link · **Скринридеры** · `aria-live` регионы · **Распространённые ошибки** · **a11y-чеклист для компонентов** · Модальное окно (Dialog) · Выпадающее меню (Dropdown) · Табы (Tabs) · Уведомления (Toast / Alert) · **Частые вопросы на собесе**
-- **5.07 Forms** — `/content/html/forms`
-  **Элемент form** · **Input types** · **Другие элементы форм** · Label · Textarea · Select, option и optgroup · Button · Fieldset и legend · Datalist · Output, progress и meter · **HTML5 Constraint Validation** · Атрибуты валидации · CSS-псевдоклассы · Constraint Validation API · **FormData API** · **События форм** · `submit` · `input` vs `change` · Другие события · **На фронте: controlled vs uncontrolled** · **Частые вопросы на собесе**
-- **5.08 Media** — `/content/html/media`
-  **Изображения (img)** · Ключевые атрибуты · **Responsive images** · 1. Resolution switching (srcset + sizes) · 2. Art direction (picture) · Когда что использовать · **Современные форматы изображений** · **Video и audio** · **SVG** · Способы вставки · Доступность SVG · **Canvas** · SVG vs Canvas · **Iframe** · Sandbox · Permissions Policy (allow) · Ленивая загрузка · Защита от clickjacking · PostMessage коммуникация · CSP и iframe · **Частые вопросы на собесе**
-- **5.09 Web Components** — `/content/html/web-components`
-  **Что такое Web Components** · **Custom Elements** · Создание · Lifecycle callbacks · Autonomous vs Customized Built-in · **Shadow DOM** · Создание · Open vs Closed · Light DOM vs Shadow DOM · **Template и slot** · Template · Slot · **CSS и Shadow DOM** · Инкапсуляция · Специальные селекторы · Part - стилизация извне · **Практический пример: Counter** · **На фронте: Web Components vs Framework Components** · Библиотеки поверх Web Components · **Частые вопросы на собесе**
+- **5.01 HTML5 Fundamentals** — `/content/html/markup-language` · по стандарту
+  **Что такое HTML** · **Модели содержимого** · Что парсер чинит · Что парсер оставляет · **Таблицы** · **DOCTYPE и режимы** · **Как браузер разбирает HTML** · **Символьные ссылки** · **HTML, XHTML и JSX**
+- **5.02 Document Structure & Rendering** — `/content/html/structure` · по стандарту
+  **Скелет документа** · **DOM** · **Пока страница грузится** · Потоковая отрисовка · Сканер предзагрузки · **Жизненный цикл документа** · Стиль задерживает DOMContentLoaded · Уход со страницы
+- **5.03 Head content** — `/content/html/head-content` · по стандарту
+  **Что можно класть в head** · Порядок · **meta** · **link** · media у стилей · **script** · Классический скрипт и модуль · defer, async и встроенные скрипты · Скрипты из JavaScript · Import map · **base, noscript и CSP** · base · noscript · CSP в meta
+- **5.04 Semantics & Tags** — `/content/html/tags` · по стандарту
+  **Зачем семантика** · **Ориентиры** · section, article или div · **Заголовки** · **Текст и списки** · **Ссылка или кнопка** · **Таблицы** · **dialog и details** · dialog · details · Пустые и замещаемые элементы
+- **5.05 Attributes** — `/content/html/attributes` · по стандарту
+  **Атрибут и свойство** · value и checked · Как отражаются остальные · **Булевые и перечислимые атрибуты** · **data-атрибуты** · **Глобальные атрибуты** · id · Обработчики в атрибутах · **inert, popover и commandfor** · inert · popover · commandfor · **Атрибуты безопасности**
+- **5.06 Accessibility** — `/content/html/accessibility` · по стандарту
+  **Зачем и по каким правилам** · **Дерево доступности** · Доступное имя · **ARIA** · Первое правило ARIA · Частые атрибуты · aria-hidden и фокус · **Клавиатура и фокус** · tabindex · Составные виджеты · Управление фокусом · **Live-регионы** · **Формы** · **Цвет и контраст** · **Проверка**
+- **5.07 Forms** — `/content/html/forms` · по стандарту
+  **Форма и кнопки** · Кнопка по умолчанию — отправка · Отправка по Enter · Подписи · **Типы полей** · **Встроенная валидация** · Constraint Validation API · **Отправка** · **FormData** · Отправка через fetch · **События** · Управляемые и неуправляемые поля
+- **5.08 Media** — `/content/html/media` · по стандарту
+  **Картинки** · Размеры и сдвиг макета · alt · **Адаптивные картинки** · srcset и плотность · srcset, w и sizes · picture · **Ленивая загрузка** · **Видео и аудио** · **SVG** · **iframe** · sandbox · allow
+- **5.09 Web Components** — `/content/html/web-components` · по стандарту
+  **Что такое веб-компоненты** · **Пользовательские элементы** · Жизненный цикл · Обновление и ленивые свойства · **Shadow DOM** · Селекторы внутри · **template и слоты** · template · Слоты · **События через границу** · **Сервер и формы** · Декларативный Shadow DOM · Элементы формы · **Когда нужны веб-компоненты**
 
 ## 6. CSS
 
