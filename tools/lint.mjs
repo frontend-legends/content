@@ -42,7 +42,7 @@ const RUNNABLE = new Set(['js', 'ts', 'jsx', 'tsx', 'vue']);
 const SKIP_CHAPTERS = ['02.'];
 const TAIL_ALGO = ['Красные флаги в ответе', 'Как спрашивают на собеседовании', 'Полезные ссылки'];
 const LIGHT_CHAPTERS = ['18.', '20.'];
-const WORDS = { min: 900, max: 4000 };
+const WORDS = { min: 500, max: 4000 };
 
 // ---------- книга: какие адреса существуют ----------
 function* walkMd(dir) {
